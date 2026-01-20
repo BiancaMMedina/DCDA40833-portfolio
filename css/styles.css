@@ -7,10 +7,10 @@
    CSS Variables (Color Scheme)
    ========================= */
 :root {
-    --primary-color: ##4d1979;      /* TCU Purple */
-    --secondary-color: #7c3aed;    /* Light Purple */
-    --accent-color: #ffd700;       /* Gold accent */
-    --text-color: #333;            /* Dark gray for text */
+    --primary-color: #640a58;      /* Maroon */
+    --secondary-color: #ae7ca7;    /* Light Pink */
+    --accent-color: #c6bcd2;       /* Lighter Pink */
+    --text-color: #58411b;            /* Darker Maroon */
     --text-secondary: #64748b;     /* Lighter gray for captions */
     --bg-color: #f4f4f4;           /* Light background */
     --white: #ffffff;
