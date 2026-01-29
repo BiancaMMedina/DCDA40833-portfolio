@@ -7,13 +7,14 @@
    CSS Variables (Color Scheme)
    ========================= */
 :root {
-    --primary-color: #71516d;      /* Maroon */
-    --secondary-color: #ae7ca7;    /* Light Pink */
-    --accent-color: #c6bcd2;       /* Lighter Pink */
+    --primary-color: #91818A;      /* Ash Purple */
+    --secondary-color: #B2A3B5;    /* Light Pink */
+    --accent-color: #C3BAAA;       /* Lighter Beige */
     --text-color: #58411b;            /* Darker Maroon */
-    --text-secondary: #64748b;     /* Lighter gray for captions */
-    --bg-color: #f4f4f4;           /* Light background */
+    --text-secondary: #3a1c3d;     /* Dark Purple for captions */
+    --bg-color: #f5eeee;           /* Light background */
     --white: #ffffff;
+    
 }
 
 /* =========================
