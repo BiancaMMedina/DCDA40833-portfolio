@@ -9,12 +9,22 @@
 <body>
     <header>
         <nav>
-    <a href="index.html">Home</a>
-    <a href="ai-evaluation.html">Lab 2: AI Evaluation</a>
-    <a href="tufte-critique.html">Lab 3: Tufte Critique</a>
-    <a href="tableau-visualization.html" class="active">Lab 4: Tableau Visualization</a>
-    <a href="lab5.html">Lab 5</a>
-</nav>
+            <!-- Hamburger menu button (visible only on mobile) -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+                <li><a href="tufte-critique.html">Tufte Critique</a></li>
+                <li><a href="tableau-visualization.html" class="active">Tableau Viz</a></li>
+                <li><a href="lab5.html">Lab 5</a></li>
+                <li><a href="hometown-map.html">Hometown Map</a></li>
+            </ul>
+        </nav>
         <h1>Data Visualization in Tableau Public</h1>
     </header>
 
@@ -104,7 +114,29 @@ There are other tools that can do things that Tableau cannot for example, Excel 
 I wish Tableau could have predictive modeling without the help of Python or Excel. </main>
 
     <footer>
-        <p>© 2026 Bianca Medina</p>
+        <p>© 2026 Bianca Medina | <a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">GitHub</a></p>
     </footer>
+
+    <!-- JavaScript for hamburger menu toggle -->
+    <script>
+        // Get hamburger button and navigation menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Toggle menu open/closed when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a navigation link is clicked (better UX on mobile)
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

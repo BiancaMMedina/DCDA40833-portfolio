@@ -9,10 +9,21 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="lab02.html" class="active">Lab 2: AI Evaluation</a>
-
-            <!-- Add more lab links as the semester progresses -->
+            <!-- Hamburger menu button (visible only on mobile) -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lab02.html" class="active">Lab 2: AI Evaluation</a></li>
+                <li><a href="tufte-critique.html">Tufte Critique</a></li>
+                <li><a href="tableau-visualization.html">Tableau Viz</a></li>
+                <li><a href="lab5.html">Lab 5</a></li>
+                <li><a href="hometown-map.html">Hometown Map</a></li>
+            </ul>
         </nav>
         <h1>AI Tool Evaluation</h1>
     </header>
@@ -89,7 +100,29 @@ When evaluating a new AI tool in the future, I would ask questions such as: What
     </main>
 
     <footer>
-        <p>&copy; 2026 Bianca Medina | <a href="https://github.com/yourusername/dcda-portfolio">GitHub</a></p>
+        <p>&copy; 2026 Bianca Medina | <a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">GitHub</a></p>
     </footer>
+
+    <!-- JavaScript for hamburger menu toggle -->
+    <script>
+        // Get hamburger button and navigation menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Toggle menu open/closed when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a navigation link is clicked (better UX on mobile)
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

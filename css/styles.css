@@ -101,6 +101,44 @@ nav a:hover {
 }
 
 /* =========================
+   Hamburger Menu
+   ========================= */
+/* Hamburger button - hidden on desktop, visible on mobile */
+.hamburger {
+    display: none;              /* Hidden by default (desktop) */
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+    position: relative;
+}
+
+/* Three lines of the hamburger icon */
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Animate hamburger to X when active */
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;                 /* Hide middle line */
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* =========================
    Main Content
    ========================= */
 /* Style main semantic tag directly */
@@ -383,18 +421,59 @@ footer a:hover {
 
     nav {
         font-size: 0.9rem;
+        position: relative;     /* For absolute positioning of menu */
     }
 
-    /* Stack navigation vertically on mobile */
+    /* Show hamburger button on mobile */
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+    }
+
+    /* Hide navigation menu by default on mobile */
     nav ul {
-        flex-direction: column;  /* Change from row to column */
-        align-items: center;     /* Center the stacked items */
+        position: fixed;         /* Fixed positioning for full-screen menu */
+        top: 0;
+        left: -100%;            /* Hide off-screen to the left */
+        width: 70%;             /* 70% of screen width */
+        height: 100vh;          /* Full viewport height */
+        background-color: #422e42;
+        flex-direction: column;  /* Stack items vertically */
+        align-items: flex-start; /* Align to left */
+        padding: 5rem 2rem 2rem 2rem; /* Space for content (extra top for clearance) */
+        gap: 0;                 /* Remove gap, use margin instead */
+        transition: left 0.3s ease; /* Smooth slide animation */
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        overflow-y: auto;       /* Scroll if content is too tall */
+    }
+
+    /* Show menu when active */
+    nav ul.active {
+        left: 0;                /* Slide in from left */
+    }
+
+    /* Style nav items for mobile */
+    nav li {
+        width: 100%;
+        margin: 0;
     }
 
     nav a {
         display: block;          /* Full width for easier tapping */
         width: 100%;
-        text-align: center;
+        text-align: left;
+        padding: 1rem;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav a:hover {
+        background-color: var(--primary-color);
+        padding-left: 1.5rem;    /* Indent on hover for visual feedback */
     }
 
     main section {
