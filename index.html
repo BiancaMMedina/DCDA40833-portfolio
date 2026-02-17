@@ -127,16 +127,20 @@
     <!-- JavaScript for hamburger menu toggle -->
     <script>
         // Get hamburger button and navigation menu
+        // This code is responsible for toggling the navigation menu on mobile devices
+        // I understand the logic of how the hamburger menu works and how it enhances the user experiences     
+      
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
 
         // Toggle menu open/closed when hamburger is clicked
+        // I understand that this code 
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when a navigation link is clicked (better UX on mobile)
+        // Close menu when a navigation link is clicked (better UX on mobile devices)
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
