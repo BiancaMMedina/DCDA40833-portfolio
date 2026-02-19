@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 – AI Integration | Bianca Medina</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Ensure reveal sections are visible */
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lab02.html">Lab 2</a></li>
+                <li><a href="tufte-critique.html">Tufte Critique</a></li>
+                <li><a href="tableau-visualization.html">Tableau Viz</a></li>
+                <li><a href="lab05.html" class="active">Lab 5</a></li>
+                <li><a href="hometown-map.html">Hometown Map</a></li>
+            </ul>
+
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                <span class="toggle-slider"></span>
+            </button>
+        </nav>
+        <h1>Lab 5 – AI Integration Reflection</h1>
+    </header>
+
+    <main>
+        <!-- Technical Understanding -->
+        <section class="reveal">
+            <h2>Technical Understanding</h2>
+
+            <h3>1. What code did the AI generate? </h3>
+            <p>
+                I asked Claude Sonnet 4.5 to create four features for my portfolio, from easiest to hardest:
+            </p>
+            <ul>
+                <li><strong>Hamburger Toggle:</strong> Allows mobile users to toggle through different navigation tabs.</li>
+                <li><strong>Scroll Reveal Animation:</strong> Animates elements to appear/disappear smoothly as users scroll.</li>
+                <li><strong>Light and Dark Mode Toggle:</strong> Lets users switch between light and dark modes.</li>
+                <li><strong>Progress Bar:</strong> Shows how far the user has scrolled on the page.</li>
+            </ul>
+
+            <h3>2. How does it work?</h3>
+            <p>
+                I understand the basic mechanics of the code: I tell the AI what I want, and it writes the functions. 
+                I’m confident with simple functions and if/else logic, but some parts like threshold, root margin, and class list are still tricky for me to understand.
+            </p>
+
+            <h3>3. What did you modify?</h3>
+            <p>
+                <strong>Hamburger Toggle:</strong> I first began with the Hamburger Toggle. This worked perfectly; no changes needed after the code was implemented.<br>
+                <strong>Scroll Reveal Animation:</strong> My second feature was my Scroll Reveal feature. Worked as intended and didn't need to add onto the prompt.<br>
+                <strong>Light and Dark Mode:</strong> Initially too big and unflattering. I modified it to be smaller, removed the sun/moon symbols that it added in the beginning, and added it to all my tabs.<br>
+                <strong>Progress Bar:</strong> Took several attempts to make the prompts work; once adjusted, it began to function correctly.
+            </p>
+        </section>
+
+        <!-- Process Evaluation -->
+        <section class="reveal">
+            <h2>Process Evaluation</h2>
+
+            <h3>4. When was AI helpful?</h3>
+            <p>
+                AI accelerated feature implementation, I don't know what I would've done without it. My portfolio would look very different if I had to write all the code myself.
+            </p>
+
+            <h3>5. When was AI problematic?</h3>
+            <p>
+                For harder features (dark mode toggle, progress bar), AI initially game me code that didn't work. I had to tweak prompts and make adjustments to get my desired outcome.
+            </p>
+
+            <h3>6. What's your role? In an AI-assisted workflow, what remains uniquely human? What can't (or shouldn't) be automated?</h3>
+            <p>
+                My role remains uniquely human: writing prompts, guiding AI, making design decisions, and interpreting how features should behave for users.
+                I believe the human experience and how humans interact with something can never be understood by Ai. 
+            </p>
+        </section>
+
+        <!-- Ethical Considerations -->
+        <section class="reveal">
+            <h2>Ethical Considerations</h2>
+
+            <h3>7. Learning trade-offs: Does vibe coding help or hinder your development as a programmer?</h3>
+            <p>
+                Vibe coding helps me work efficiently with AI, but if I wanted to focus on "fundamentals first", it might hinder my learning and understanding of code.
+            </p>
+
+            <h3>8. Attribution: When using AI-generated code, what does proper citation look like? </h3>
+            <p>
+                Proper citation should look the same in academic and professional contexts, I believe in giving the person credit even when it’s extracted by an Ai tool. 
+                I think you should always note which parts of the code were Ai assisted and include the tool you used. 
+            </p>
+
+            <h3>9. Personal guidelines for AI use</h3>
+            <p>
+                I will use AI for debugging, understanding complex code, and generating ideas. I won’t use it for security-sensitive tasks, bypassing rules, or plagiarism.
+            </p>
+        </section>
+
+        <!-- Prompts Used -->
+        <section class="reveal">
+            <h2>Prompts Used for Each Feature</h2>
+            <ul>
+                <li><strong>Hamburger Toggle:</strong> Add a hamburger menu to my HTML portfolio. The nav should collapse into a hamburger icon on screens under 768px. Use vanilla JavaScript, no frameworks.</li>
+                <li><strong>Light and Dark Mode:</strong>I am building a personal portfolio website using HTML, CSS, and JavaScript, and I want to add a fully functional dark mode toggle. Please implement a clean, modern toggle button in the top-right corner of the navbar labeled “Dark Mode.” The dark mode should be controlled by applying a CSS class such as .dark-mode to the body element, and you should define both light and dark themes using CSS custom properties in root, so the color system is organized and scalable. Make sure the background, text, navbar, buttons, cards or project sections, and links (including hover states) all adjust appropriately when dark mode is enabled. Include smooth transitions between themes for a polished feel. </li>
+                <li><strong>Scroll Reveal Animation:</strong> I want to add smooth, professional scroll-based reveal animations to my portfolio website using HTML, CSS, and JavaScript. When elements enter the viewport while scrolling, they should fade in and slightly move upward (subtle translateY effect). The animation should feel clean and modern, not dramatic or distracting. Include smooth easing and clean timing (around 0.6–1s duration). Make sure the animation only triggers once per element (no repeating on scroll up/down unless easily configurable). The code should be production-ready, minimal, and well-commented.</li>
+                <li><strong>Progress Bar:</strong> I want to add a thin scroll progress bar to the top of my portfolio website that visually indicates how far the user has scrolled down the page. The progress bar should be fixed to the top of the viewport, span the full width of the screen, and gradually fill from left to right as the user scrolls. The design should be minimal and modern. The bar should be thin (around 3–5px), smooth, and animated with a subtle transition effect. It should not interfere with my existing layout or navigation. Use vanilla JavaScript (no libraries). The progress width should dynamically calculate based on the total scrollable height of the page and update smoothly on scroll. Make sure it works across different screen sizes and handles responsive layouts correctly.</li>
+
+            </ul>
+        </section>
+        <!-- Vibe Coding Guidelines Section -->
+<section class="reveal">
+    <h2>Vibe Coding Guidelines</h2>
+    <p>
+        These are my personal rules for using AI in coding:
+    </p>
+    <ul>
+        <li>Use AI for debugging code.</li>
+        <li>Use AI to help understand complex code.</li>
+        <li>Use AI to generate ideas or suggestions.</li>
+        <li>Avoid using AI for anything security-related.</li>
+        <li>Do not use AI to bypass rules or restrictions.</li>
+        <li>Do not use AI to plagiarize code or content.</li>
+    </ul>
+</section>
+    </main>
+
+    <footer>
+        <p>© 2026 Bianca Medina | <a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">GitHub</a></p>
+    </footer>
+
+    <!-- Core JS -->
+    <script src="js/dark-mode.js"></script>
+    <script src="js/hamburger.js"></script>
+    <script src="js/scroll-reveal.js"></script>
+    <script src="js/scroll-progress.js"></script>
+</body>
+</html>

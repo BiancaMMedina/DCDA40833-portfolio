@@ -6,16 +6,124 @@
 /* =========================
    CSS Variables (Color Scheme)
    ========================= */
+/* Light Mode Colors (Default) */
 :root {
     --primary-color: #91818A;      /* Ash Purple */
     --secondary-color: #B2A3B5;    /* Light Pink */
     --accent-color: #C3BAAA;       /* Lighter Beige */
-    --text-color: #58411b;            /* Darker Maroon */
+    --text-color: #1f1501;         /* Darker Maroon */
     --text-secondary: #3a1c3d;     /* Dark Purple for captions */
     --bg-color: #f5eeee;           /* Light background */
     --white: #ffffff;
-    
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --nav-bg: #422e42;
+    --code-bg: #2d2d2d;
+    --inline-code-bg: #f4f4f4;
+    --inline-code-color: #c7254e;
 }
+
+/* Dark Mode Colors */
+body.dark-mode {
+    --primary-color: #B2A3B5;      /* Lighter purple for dark mode */
+    --secondary-color: #C3BAAA;    /* Beige accent */
+    --accent-color: #D4C5C7;       /* Light beige */
+    --text-color: #e8dfe0;         /* Light text */
+    --text-secondary: #c9b8cc;     /* Light purple text */
+    --bg-color: #1a1625;           /* Very dark purple background */
+    --white: #2a2235;              /* Dark surface instead of white */
+    --card-bg: #251d2e;            /* Dark card background */
+    --border-color: #3d3348;       /* Dark border */
+    --shadow: rgba(0, 0, 0, 0.4);  /* Stronger shadow for dark mode */
+    --nav-bg: #1f1829;             /* Darker nav */
+    --code-bg: #1e1e1e;
+    --inline-code-bg: #2d2436;
+    --inline-code-color: #ff8fab;
+}
+
+/* =========================
+   Smooth Transitions for Theme Switch
+   ========================= */
+body,
+nav,
+header,
+main section,
+.portfolio-card,
+footer,
+pre,
+code {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+a {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* =========================
+   Scroll Reveal Animations
+   ========================= */
+/* Default state for elements with reveal class - hidden and shifted down */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Active state - visible and in position */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: Add slight delay for staggered animations */
+.reveal.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.reveal.delay-4 {
+    transition-delay: 0.4s;
+}
+
+/* Ensure elements that should already be visible remain so */
+.reveal.no-delay {
+    transition-delay: 0s;
+}
+
+/* =========================
+   Scroll Progress Bar
+   ========================= */
+/* Fixed progress bar at the top of the viewport */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;              /* Starts at 0, will be updated by JavaScript */
+    min-width: 20px;        /* Always show at least a small indicator */
+    height: 5px;            /* Slightly thicker for better visibility */
+    background: #B2A3B5;    /* Solid fallback color */
+    background: var(--primary-color);  /* Use theme color */
+    z-index: 10000;         /* Above all other elements including nav */
+    transition: width 0.1s ease-out;  /* Smooth animation as user scrolls */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    pointer-events: none;   /* Don't intercept clicks */
+}
+
+/* Brighter color for dark mode */
+body.dark-mode .scroll-progress-bar {
+    background: #C3BAAA;    /* Solid fallback color */
+    background: var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(178, 163, 181, 0.5);
+}
+
 
 /* =========================
    Basic Reset & Typography
@@ -37,39 +145,60 @@ body {
     background-color: var(--bg-color);
 }
 
+/* General link styling for better visibility in both modes */
+main a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+main a:hover {
+    color: var(--primary-color);
+}
+
+main a:visited {
+    color: var(--text-secondary);
+}
+
 /* =========================
    Header & Navigation
    ========================= */
 /* Style semantic tags directly - no classes needed! */
 header {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--white);
     padding: 2rem 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 header h1 {
-    color: white;
+    color: var(--text-color);
     margin: 0 0 0.5rem 0;
     font-size: 2rem;
+}
+
+body.dark-mode header h1 {
+    color: var(--text-color);
 }
 
 header p {
     margin: 0;
     opacity: 0.9;
     font-size: 1.1rem;
+    color: var(--text-color);
 }
 
 nav {
-    background-color: #422e42;
+    background-color: var(--nav-bg);
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
+    align-items: center;        /* Vertically center items */
     position: sticky;           /* Stick to top when scrolling */
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow);
+    gap: 1rem;                  /* Space between ul and dark mode button */
 }
 
 /* Style the navigation list */
@@ -98,6 +227,72 @@ nav a {
 
 nav a:hover {
     background-color: var(--primary-color);
+}
+
+/* =========================
+   Dark Mode Toggle Switch
+   ========================= */
+/* Minimal toggle switch styled like iOS toggle */
+.dark-mode-toggle {
+    position: absolute;
+    right: 1rem;
+    width: 48px;
+    height: 24px;
+    background-color: var(--border-color);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    outline: none;
+}
+
+.dark-mode-toggle:hover {
+    opacity: 0.8;
+}
+
+.dark-mode-toggle:focus {
+    box-shadow: 0 0 0 3px var(--accent-color);
+}
+
+/* The sliding circle inside the toggle */
+.toggle-slider {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    transform: translateX(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* When dark mode is active, slide the circle to the right and change bg color */
+body.dark-mode .dark-mode-toggle {
+    background-color: var(--secondary-color);
+}
+
+body.dark-mode .toggle-slider {
+    transform: translateX(26px);
+}
+
+/* Adjust dark mode toggle for mobile */
+@media (max-width: 480px) {
+    .dark-mode-toggle {
+        width: 44px;
+        height: 22px;
+        right: 0.5rem;
+    }
+    
+    .toggle-slider {
+        width: 18px;
+        height: 18px;
+    }
+    
+    body.dark-mode .toggle-slider {
+        transform: translateX(24px);
+    }
 }
 
 /* =========================
@@ -150,11 +345,11 @@ main {
 
 /* All sections inside main get consistent styling */
 main section {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     margin-bottom: 2rem;       /* Space between sections */
     border-radius: 8px;        /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 /* Style h2 headings inside sections */
@@ -177,6 +372,7 @@ main section h3 {
 main section p {
     margin-bottom: 1rem;
     line-height: 1.8;
+    color: var(--text-color);
 }
 
 /* Lists inside sections */
@@ -203,8 +399,9 @@ main section li {
     max-width: 100%;           /* Responsive: never wider than container */
     height: auto;              /* Maintain aspect ratio */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color); /* Subtle border for dark mode */
 }
 
 /* Figure captions */
@@ -228,7 +425,7 @@ main section li {
    ========================= */
 /* Improve pre/code styling for Python code */
 pre {
-    background: #2d2d2d;          /* Dark background */
+    background: var(--code-bg);   /* Dark background */
     color: #f8f8f2;               /* Light text */
     border: none;
     border-radius: 8px;
@@ -245,8 +442,8 @@ code {
 
 /* Inline code (inside paragraphs) */
 p code, li code {
-    background: #f4f4f4;
-    color: #c7254e;
+    background: var(--inline-code-bg);
+    color: var(--inline-code-color);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-size: 0.9em;
@@ -275,23 +472,28 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    background: white;
+    background: var(--card-bg);
 }
 
 th, td {
     padding: 0.75rem 1rem;
     text-align: left;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
 }
 
 th {
     background: var(--primary-color);
-    color: white;
+    color: var(--text-color);
     font-weight: 600;
 }
 
 tr:nth-child(even) {
-    background: #f8f9fa;
+    background: var(--bg-color);
+}
+
+body.dark-mode tr:nth-child(even) {
+    background: var(--nav-bg);
 }
 
 .results-table {
@@ -349,8 +551,8 @@ tr:nth-child(even) {
 /* Individual portfolio card styling */
 .portfolio-card {
     display: block;
-    background: white;
-    border: 2px solid #e2e8f0;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
     border-radius: 12px;
     padding: 1.5rem;
     text-decoration: none;
@@ -361,7 +563,7 @@ tr:nth-child(even) {
 
 .portfolio-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 16px rgba(77, 25, 121, 0.15);
+    box-shadow: 0 8px 16px var(--shadow);
     transform: translateY(-4px);
 }
 
@@ -382,7 +584,7 @@ tr:nth-child(even) {
 .lab-tag {
     display: inline-block;
     background: var(--secondary-color);
-    color: white;
+    color: var(--card-bg);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.25rem 0.5rem;
@@ -395,8 +597,8 @@ tr:nth-child(even) {
    Footer (semantic tag)
    ========================= */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--nav-bg);
+    color: var(--text-color);
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;
@@ -405,9 +607,11 @@ footer {
 footer a {
     color: var(--accent-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
@@ -422,6 +626,7 @@ footer a:hover {
     nav {
         font-size: 0.9rem;
         position: relative;     /* For absolute positioning of menu */
+        justify-content: flex-start; /* Align items to start */
     }
 
     /* Show hamburger button on mobile */
@@ -429,8 +634,15 @@ footer a:hover {
         display: flex;
         position: absolute;
         top: 50%;
-        right: 1rem;
+        left: 1rem;             /* Move hamburger to left on mobile */
         transform: translateY(-50%);
+        z-index: 102;           /* Above other nav elements */
+    }
+
+    /* Position dark mode toggle on mobile (top-right) */
+    .dark-mode-toggle {
+        right: 0.5rem;
+        z-index: 102;           /* Above other nav elements */
     }
 
     /* Hide navigation menu by default on mobile */
@@ -440,13 +652,13 @@ footer a:hover {
         left: -100%;            /* Hide off-screen to the left */
         width: 70%;             /* 70% of screen width */
         height: 100vh;          /* Full viewport height */
-        background-color: #422e42;
+        background-color: var(--nav-bg);
         flex-direction: column;  /* Stack items vertically */
         align-items: flex-start; /* Align to left */
         padding: 5rem 2rem 2rem 2rem; /* Space for content (extra top for clearance) */
         gap: 0;                 /* Remove gap, use margin instead */
         transition: left 0.3s ease; /* Smooth slide animation */
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 0 10px var(--shadow);
         z-index: 100;
         overflow-y: auto;       /* Scroll if content is too tall */
     }

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+    
     <!-- Navigation: Links to all portfolio pages -->
     <nav>
         <!-- Hamburger menu button (visible only on mobile) -->
@@ -26,6 +29,11 @@
             <li><a href="lab5.html">Lab 5</a></li>
             <li><a href="hometown-map.html">Hometown Map</a></li>
         </ul>
+        
+        <!-- Dark Mode Toggle Switch -->
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <span class="toggle-slider"></span>
+        </button>
     </nav>
 
     <!-- Header: Your name and course info -->
@@ -36,7 +44,7 @@
 
     <main>
         <!-- Welcome Section: Brief introduction to your portfolio -->
-        <section id="welcome">
+        <section id="welcome" class="reveal">
             <h2>Welcome</h2>
             <!-- TODO: Write a brief introduction (2-3 sentences) about your portfolio -->
             <p>Welcome! This portfolio showcases my work in Digital Culture and Data Analytics, where I explore how data, design, and technology shape the digital world. Through projects that combine research, creativity, and technical skills, I focus on understanding digital spaces while building practical tools such as coding, data analysis, and web design. This site represents my growth as a student and highlights my interests in communication, digital culture, and emerging technologies.</p>
@@ -46,7 +54,7 @@
 <!-- I really like to show my work and hoping to make my website beauty related -->
  <!-- Really excited about this semester project-->
         <!-- About Section: Tell visitors about yourself -->
-        <section id="about">
+        <section id="about" class="reveal">
             <h2>About Me</h2>
             <!-- TODO: Replace this placeholder content with information about yourself -->
             <p><strong>Who I am:</strong> My name is Bianca Medina, and I am a Strategic Communications major graduating in May 2026. One interesting fact about me is that I love music and already hold a degree in sound engineering and live production, which has shaped how I think about creativity, storytelling, and technical problem-solving.</p>
@@ -63,7 +71,7 @@
         </section>
 
         <!-- Portfolio Section: Links to all lab pages -->
-        <section id="portfolio">
+        <section id="portfolio" class="reveal">
             <h2>My Work</h2>
             <p>Click on any card below to view that lab assignment. Focus of actual labs may change over the course of the semester:</p>
 
@@ -71,35 +79,35 @@
             <div class="portfolio-grid">
 
                 <!-- Lab 2: AI Tool Evaluation -->
-                <a href="ai-evaluation.html" class="portfolio-card">
+                <a href="ai-evaluation.html" class="portfolio-card reveal delay-1">
                     <h3>AI Tool Evaluation</h3>
                     <span class="lab-tag">Lab 2</span>
                     <p>Analysis of AI tools and their capabilities, exploring how artificial intelligence is changing digital culture.</p>
                 </a>
 
                 <!-- Lab 3: Tufte Critique -->
-                <a href="tufte-critique.html" class="portfolio-card">
+                <a href="tufte-critique.html" class="portfolio-card reveal delay-2">
                     <h3>Tufte Critique</h3>
                     <span class="lab-tag">Lab 3</span>
                     <p>Critical analysis of a data visualization using Edward Tufte's principles of graphical excellence.</p>
                 </a>
 
                 <!-- Lab 4: Tableau Visualization -->
-                <a href="tableau-visualization.html" class="portfolio-card">
+                <a href="tableau-visualization.html" class="portfolio-card reveal delay-3">
                     <h3>Tableau Visualization</h3>
                     <span class="lab-tag">Lab 4</span>
                     <p>Interactive data visualization created with Tableau Public, exploring patterns in real-world data.</p>
                 </a>
 
                 <!-- Lab 5: TBD -->
-                <a href="lab5.html" class="portfolio-card">
+                <a href="lab5.html" class="portfolio-card reveal delay-4">
                     <h3>Lab 5</h3>
                     <span class="lab-tag">Lab 5</span>
                     <p>Content based on Lab 5 assignment.</p>
                 </a>
 
                 <!-- Lab 6: Hometown Map -->
-                <a href="hometown-map.html" class="portfolio-card">
+                <a href="hometown-map.html" class="portfolio-card reveal delay-4">
                     <h3>Hometown Map</h3>
                     <span class="lab-tag">Lab 6</span>
                     <p>Interactive Folium map showcasing meaningful locations from my hometown with personal reflections.</p>
@@ -109,7 +117,7 @@
         </section>
 
         <!-- Reflection Section: Optional semester reflection -->
-        <section id="reflection">
+        <section id="reflection" class="reveal">
             <h2>Semester Reflection</h2>
             <!-- TODO: After completing all labs, write a reflection on your growth -->
             <p><strong>What I learned:</strong> I learned some new skills by changing the colors and adding my headshot</p>
@@ -124,12 +132,113 @@
         <p><a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">View Repository on GitHub</a></p>
         <p>&copy; 2026 Bianca Medina | DCDA 40833 | TCU</p>
     </footer>
+    
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        // ===================================
+        // DARK MODE FUNCTIONALITY
+        // ===================================
+        
+        // Get the dark mode toggle button element
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        /**
+         * Initialize dark mode based on saved preference or system preference
+         * This runs immediately when the page loads to prevent flash of wrong theme
+         */
+        function initializeDarkMode() {
+            // Check if user has a saved preference in localStorage
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark') {
+                // User previously chose dark mode
+                enableDarkMode();
+            } else if (savedTheme === 'light') {
+                // User previously chose light mode
+                disableDarkMode();
+            } else {
+                // No saved preference - check system preference
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    enableDarkMode();
+                } else {
+                    disableDarkMode();
+                }
+            }
+        }
+        
+     //Above is my Java Script Dark Mode Toggle 
+    // I understand how this code works, it just allows user to toggle back and forth between a dark mode and a light mode
+    // This was very easy to implement and I think it adds a nice touch to my portfolio.
+    // I will say that it did only work on one tab, I did have to adjust the code a little bit to make it work on all pages, its definitely working now
+    // Had some issues with it covering my homepage and I wanted to remove the sun and moon symbols it embedded for me
+    // I also had to make the toggle smaller it was too big
+        /**
+         * Enable dark mode by adding the dark-mode class to body
+         * Updates button appearance and saves preference
+         */
+        function enableDarkMode() {
+            body.classList.add('dark-mode');
+            darkModeToggle.setAttribute('aria-pressed', 'true');
+            localStorage.setItem('theme', 'dark');
+        }
+        
+        /**
+         * Disable dark mode by removing the dark-mode class from body
+         * Updates button appearance and saves preference
+         */
+        function disableDarkMode() {
+            body.classList.remove('dark-mode');
+            darkModeToggle.setAttribute('aria-pressed', 'false');
+            localStorage.setItem('theme', 'light');
+        }
+        
+        /**
+         * Toggle between dark and light mode
+         */
+        function toggleDarkMode() {
+            if (body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        }
+        
+        // Event listener for the dark mode toggle button
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        
+        // Make toggle work with keyboard (Enter and Space keys)
+        darkModeToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleDarkMode();
+            }
+        });
+        
+        // Listen for system theme changes and update if user hasn't set manual preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            const savedTheme = localStorage.getItem('theme');
+            // Only auto-update if user hasn't manually set a preference
+            if (!savedTheme) {
+                if (e.matches) {
+                    enableDarkMode();
+                } else {
+                    disableDarkMode();
+                }
+            }
+        });
+        
+        // Initialize dark mode when page loads
+        initializeDarkMode();
+    </script>
+    
     <!-- JavaScript for hamburger menu toggle -->
     <script>
         // Get hamburger button and navigation menu
         // This code is responsible for toggling the navigation menu on mobile devices
         // I understand the logic of how the hamburger menu works and how it enhances the user experiences     
-      
+        // The hamburger menu was easy to implement and I didn't have any issues with it. 
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
 
@@ -148,5 +257,177 @@
                 navMenu.classList.remove('active');
             });
         });
-    </script></body>
+    </script>
+
+    
+
+    <!-- JavaScript for Scroll Reveal Animations -->
+    <script>
+        // ===================================
+        // SCROLL REVEAL ANIMATIONS
+        // ===================================
+        
+        /**
+         * Intersection Observer for scroll-based reveal animations
+         * Watches elements with .reveal class and adds .active when they enter viewport
+         */
+        
+        // Configuration for the Intersection Observer
+        const observerOptions = {
+            root: null,           // Use the viewport as the root
+            rootMargin: '0px 0px -100px 0px',  // Trigger slightly before element is fully visible
+            threshold: 0.15       // Trigger when 15% of element is visible
+        };
+        
+        /**
+         * Callback function that runs when observed elements intersect with viewport
+         * @param {IntersectionObserverEntry[]} entries - Array of entries being observed
+         * @param {IntersectionObserver} observer - The observer instance
+         */
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                // Check if element is intersecting (entering viewport)
+                if (entry.isIntersecting) {
+                    // Add 'active' class to trigger CSS animation
+                    entry.target.classList.add('active');
+                    
+                    // Optional: Stop observing this element (animation only happens once)
+                    // Comment out the line below if you want animations to repeat on scroll up/down
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+        // Above is my Java Script for Scroll Reveal Animations
+        // I wanted to add this feature to make my portfolio more dynamic and engaging.
+        // I thought this was going to be hard to prompt but it was actually pretty easy to implement.
+        // I believe this feature looks very cool and seperates it from other portfolios 
+        // Create the Intersection Observer instance
+
+        const revealObserver = new IntersectionObserver(handleIntersection, observerOptions);
+        
+        /**
+         * Initialize scroll reveal animations
+         * Finds all elements with .reveal class and starts observing them
+         */
+        function initScrollReveal() {
+            // Get all elements that should be revealed on scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            // Start observing each element
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+            
+            // Log the number of elements being observed (helpful for debugging)
+            console.log(`Scroll reveal initialized: observing ${revealElements.length} elements`);
+        }
+        
+        // Initialize scroll reveal when DOM is fully loaded
+        // Use DOMContentLoaded to ensure all elements exist before observing
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initScrollReveal);
+        } else {
+            // DOM already loaded, initialize immediately
+            initScrollReveal();
+        }
+        
+        /**
+         * Optional: Function to manually trigger reveal on an element
+         * Usage: revealElement(document.getElementById('myElement'))
+         */
+        function revealElement(element) {
+            if (element && element.classList.contains('reveal')) {
+                element.classList.add('active');
+            }
+        }
+    </script>
+
+    <!-- JavaScript for Scroll Progress Bar -->
+    <script>
+        // ===================================
+        // SCROLL PROGRESS BAR
+        // ===================================
+        
+        /**
+         * Updates the scroll progress bar based on scroll position
+         * Calculates percentage of page scrolled and updates bar width
+         */
+        function updateScrollProgress() {
+            // Get the scroll progress bar element
+            const progressBar = document.getElementById('scrollProgress');
+            
+            // Calculate how far the user has scrolled
+            // window.pageYOffset = pixels scrolled from top
+            // document.documentElement.scrollTop = same value (fallback for older browsers)
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Calculate the total scrollable height
+            // scrollHeight = total height of the document including overflow
+            // clientHeight = visible height of the viewport
+            // Total scrollable distance = total height - visible height
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            // Calculate scroll percentage (0 to 100)
+            // If scrollHeight is 0 (page has no scroll), default to 0
+            const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            
+            // Update the progress bar width
+            progressBar.style.width = scrollPercentage + '%';
+        }
+        
+        /**
+         * Throttle function to limit how often scroll calculations happen
+         * Improves performance by preventing excessive updates
+         * @param {Function} func - Function to throttle
+         * @param {number} delay - Delay in milliseconds
+         */
+        function throttle(func, delay) {
+            let timeoutId;
+            let lastRan;
+            
+            return function() {
+                const context = this;
+                const args = arguments;
+                
+                if (!lastRan) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                } else {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(function() {
+                        if ((Date.now() - lastRan) >= delay) {
+                            func.apply(context, args);
+                            lastRan = Date.now();
+                        }
+                    }, delay - (Date.now() - lastRan));
+                }
+            };
+        }
+
+        // Above is my Java Script for A Scroll Progress Bar
+        // I wanted to add this feature to give users a visual indicator of how far they are down the page 
+        // I prompted the chat to implemet this feature but it did not give me a scroll bar
+        // I was a little frustrated at first but I was able to get it working, I simply asked it to show me the scroll bar
+        // After some convincing it finally gave me the code to implement the scroll bar, I think it looks pretty rad
+        
+        // Attach scroll event listener with throttled function
+        // Updates progress bar smoothly without overwhelming the browser
+        window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+        
+        // Update on page load (in case user refreshed mid-scroll)
+        window.addEventListener('load', updateScrollProgress);
+        
+        // Update on window resize (recalculates scrollable height)
+        window.addEventListener('resize', throttle(updateScrollProgress, 100));
+        
+        // Initialize immediately when script runs
+        updateScrollProgress();
+        
+        // Log initialization with diagnostic info (helpful for debugging)
+        console.log('Scroll progress bar initialized');
+        console.log('Page height:', document.documentElement.scrollHeight);
+        console.log('Viewport height:', document.documentElement.clientHeight);
+        console.log('Scrollable distance:', document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    </script>
+</body>
 </html>

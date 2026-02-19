@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+    
     <header>
         <nav>
             <!-- Hamburger menu button (visible only on mobile) -->
@@ -24,6 +27,11 @@
                 <li><a href="lab5.html">Lab 5</a></li>
                 <li><a href="hometown-map.html">Hometown Map</a></li>
             </ul>
+            
+            <!-- Dark Mode Toggle Switch -->
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                <span class="toggle-slider"></span>
+            </button>
         </nav>
         <h1>Data Visualization in Tableau Public</h1>
     </header>
@@ -45,7 +53,7 @@
   scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
   vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
-        <section>
+        <section class="reveal">
             <h2>1. Data Preparation</h2>
             <p>
              To prepare the dataset, I used Kaggle, a website I worked with last semester in my coding class. 
@@ -54,7 +62,7 @@
              Once downloaded I was able to see a table filled with all my favorite makeup brands that I still continuously use today. The download and upload process was a breeze and easier than expected.             </p>
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>2. Design Choices</h2>
             <p>
                 <br> For the first visualization titled, “Top Beauty Brand and Cosmetic Ratings of 2024,” I used Brand as the main dimension in my column while also using the metric “Average Rating” in my rows. I also dragged ‘Brand’ into the color section under marks to differentiate the different brands. Lastly, I listed them from lowest average rating to highest to keep it organized and cohesive. <br> 
@@ -66,7 +74,7 @@
             </p>
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>3. Expected Patterns</h2>
             <p>
                <br>  Based on the selected metrics and dimensions, I expected to see high-end/luxury beauty products to be more expensive, highly rated, and have cleaner ingredients. For the lower end/ cheaper products I expected lower ratings, lower prices, and contain ingredients that may damage the skin. I also hypothesized that men would favor products with a lighter skin feel compared to the heavier formulations typically preferred by women. Lastly, I expect to see every day-use products to generate higher engagement, since these products are widely used across routines and skill levels. <br>  
@@ -82,7 +90,7 @@
             </p>
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>4. Surprises / Outliers</h2>
             <p>
                 
@@ -95,7 +103,7 @@
             </p>
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>5. Questions for Further Investigation</h2>
             <p>
                <br> Do men tend to review products more often when they are practical or everyday items, compared to more appearance-focused products? <br> 
@@ -106,7 +114,7 @@
             </p>
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>6. Tool Evaluation: Tableau Public</h2>
             <p>
 I love Tableau because it turns data into engaging visualizations. While I could look through endless rows of data to find insights, seeing it visually makes it much easier for me to understand since I’m more of a visual learner. Being able to build graphs, maps, charts differentiate it from other platforms I’ve used in the past. 
@@ -116,6 +124,100 @@ I wish Tableau could have predictive modeling without the help of Python or Exce
     <footer>
         <p>© 2026 Bianca Medina | <a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">GitHub</a></p>
     </footer>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        // ===================================
+        // DARK MODE FUNCTIONALITY
+        // ===================================
+        
+        // Get the dark mode toggle button element
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        /**
+         * Initialize dark mode based on saved preference or system preference
+         * This runs immediately when the page loads to prevent flash of wrong theme
+         */
+        function initializeDarkMode() {
+            // Check if user has a saved preference in localStorage
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark') {
+                // User previously chose dark mode
+                enableDarkMode();
+            } else if (savedTheme === 'light') {
+                // User previously chose light mode
+                disableDarkMode();
+            } else {
+                // No saved preference - check system preference
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    enableDarkMode();
+                } else {
+                    disableDarkMode();
+                }
+            }
+        }
+        
+        /**
+         * Enable dark mode by adding the dark-mode class to body
+         * Updates button appearance and saves preference
+         */
+        function enableDarkMode() {
+            body.classList.add('dark-mode');
+            darkModeToggle.setAttribute('aria-pressed', 'true');
+            localStorage.setItem('theme', 'dark');
+        }
+        
+        /**
+         * Disable dark mode by removing the dark-mode class from body
+         * Updates button appearance and saves preference
+         */
+        function disableDarkMode() {
+            body.classList.remove('dark-mode');
+            darkModeToggle.setAttribute('aria-pressed', 'false');
+            localStorage.setItem('theme', 'light');
+        }
+        
+        /**
+         * Toggle between dark and light mode
+         */
+        function toggleDarkMode() {
+            if (body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        }
+        
+        // Event listener for the dark mode toggle button
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        
+        // Make toggle work with keyboard (Enter and Space keys)
+        darkModeToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleDarkMode();
+            }
+        });
+        
+        // Listen for system theme changes and update if user hasn't set manual preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            const savedTheme = localStorage.getItem('theme');
+            // Only auto-update if user hasn't manually set a preference
+            if (!savedTheme) {
+                if (e.matches) {
+                    enableDarkMode();
+                } else {
+                    disableDarkMode();
+                }
+            }
+        });
+        
+        // Initialize dark mode when page loads
+        initializeDarkMode();
+    </script>
 
     <!-- JavaScript for hamburger menu toggle -->
     <script>
@@ -137,6 +239,81 @@ I wish Tableau could have predictive modeling without the help of Python or Exce
                 navMenu.classList.remove('active');
             });
         });
+    </script>
+
+    <!-- JavaScript for Scroll Reveal Animations -->
+    <script>
+        // Intersection Observer for scroll-based reveal animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -100px 0px',
+            threshold: 0.15
+        };
+        
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+        
+        const revealObserver = new IntersectionObserver(handleIntersection, observerOptions);
+        
+        function initScrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initScrollReveal);
+        } else {
+            initScrollReveal();
+        }
+    </script>
+
+    <!-- JavaScript for Scroll Progress Bar -->
+    <script>
+        // SCROLL PROGRESS BAR
+        function updateScrollProgress() {
+            const progressBar = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            progressBar.style.width = scrollPercentage + '%';
+        }
+        
+        function throttle(func, delay) {
+            let timeoutId;
+            let lastRan;
+            return function() {
+                const context = this;
+                const args = arguments;
+                if (!lastRan) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                } else {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(function() {
+                        if ((Date.now() - lastRan) >= delay) {
+                            func.apply(context, args);
+                            lastRan = Date.now();
+                        }
+                    }, delay - (Date.now() - lastRan));
+                }
+            };
+        }
+        
+        window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+        window.addEventListener('load', updateScrollProgress);
+        window.addEventListener('resize', throttle(updateScrollProgress, 100));
+        
+        // Initialize immediately
+        updateScrollProgress();
+        console.log('Scroll progress bar initialized');
     </script>
 </body>
 </html>

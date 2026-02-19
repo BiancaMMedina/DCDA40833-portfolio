@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+    
     <header>
         <nav>
             <!-- Hamburger menu button (visible only on mobile) -->
@@ -24,17 +27,22 @@
                 <li><a href="lab5.html">Lab 5</a></li>
                 <li><a href="hometown-map.html">Hometown Map</a></li>
             </ul>
+            
+            <!-- Dark Mode Toggle Switch -->
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                <span class="toggle-slider"></span>
+            </button>
         </nav>
         <h1>AI Tool Evaluation</h1>
     </header>
 
     <main>
-        <section>
+        <section class="reveal">
             <h2>Introduction</h2>
             <p>In this lab, I will be exploring AI systems I have never used before to understand their capabilities, experiment with their functions, and learn how they handle different tasks. I will also examine the ethical considerations involved and reflect on how these tools can be used responsibly.</p>
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>Tool 1: Google Gemini</h2>
             <h3>Capabilities</h3>
             <p>While using Google Gemini, I was pleasantly surprised by the accuracy of its responses. I intentionally asked misleading or incorrect questions to test its reliability, and the AI consistently corrected me or gently guided me toward the correct information. However, Gemini tends to avoid deeper interpretation, critique, or value-based judgments, which is where I believe it falls short. The answers that Google Gemini gives usually feel very neutral, safe, and somewhat generic.</p>
@@ -62,7 +70,7 @@
             </figure>
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>Tool 2: Reve.AI</h2>
             <h3>Capabilities</h3>
             <p> I found using the image generator Reve.AI to be more interesting. I asked it to generate an image of a butterfly flying over a waterfall, it gave me four different versions to choose from. Some of the images looked more realistic, while others had a more cartoon-like style. I then wanted to test how well it could create a cartoon image, so I asked it to generate an Egyptian marketplace in the style of my favorite animation studio, Studio Ghibli. While the idea was creative, the results were not perfect. Some of the people were missing facial features, and certain animals were placed incorrectly, which showed the limitations of the image generator. Reve.Ai excels at producing images almost instantaneously but sometimes the images aren’t as realistic and can be missing some important details.   </p>
@@ -90,7 +98,7 @@
            
         </section>
 
-        <section>
+        <section class="reveal">
             <h2>Broader Reflections</h2>
             <p> Using AI for personal and academic purposes can be a slippery slope. When I started my academic journey, I was strongly advised never to use AI for any projects and only for personal purposes. Now, in my final semester, I am taking a class focused on AI and am encouraged to explore and use it. This shift shows how times have changed, and people are beginning to recognize that AI is a tool we need to learn to use if we want to advance our understanding of technology. I now use it both personally and in situations where professors ask me to incorporate it.
 AI tools have a significant impact on DCDA, particularly in writing code. In the past, coding could take days, weeks, or even years to refine, whereas now AI can generate functional code in seconds. This changes how coding is approached in DCDA, offering both advantages and challenges. Despite AI’s capabilities, the human role in DCDA remains essential. AI cannot create independently; it requires imagination and a prompt from a human. We are the ones who provide the direction and ideas necessary for AI to produce meaningful work.
@@ -102,6 +110,100 @@ When evaluating a new AI tool in the future, I would ask questions such as: What
     <footer>
         <p>&copy; 2026 Bianca Medina | <a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">GitHub</a></p>
     </footer>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        // ===================================
+        // DARK MODE FUNCTIONALITY
+        // ===================================
+        
+        // Get the dark mode toggle button element
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        /**
+         * Initialize dark mode based on saved preference or system preference
+         * This runs immediately when the page loads to prevent flash of wrong theme
+         */
+        function initializeDarkMode() {
+            // Check if user has a saved preference in localStorage
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark') {
+                // User previously chose dark mode
+                enableDarkMode();
+            } else if (savedTheme === 'light') {
+                // User previously chose light mode
+                disableDarkMode();
+            } else {
+                // No saved preference - check system preference
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    enableDarkMode();
+                } else {
+                    disableDarkMode();
+                }
+            }
+        }
+        
+        /**
+         * Enable dark mode by adding the dark-mode class to body
+         * Updates button appearance and saves preference
+         */
+        function enableDarkMode() {
+            body.classList.add('dark-mode');
+            darkModeToggle.setAttribute('aria-pressed', 'true');
+            localStorage.setItem('theme', 'dark');
+        }
+        
+        /**
+         * Disable dark mode by removing the dark-mode class from body
+         * Updates button appearance and saves preference
+         */
+        function disableDarkMode() {
+            body.classList.remove('dark-mode');
+            darkModeToggle.setAttribute('aria-pressed', 'false');
+            localStorage.setItem('theme', 'light');
+        }
+        
+        /**
+         * Toggle between dark and light mode
+         */
+        function toggleDarkMode() {
+            if (body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        }
+        
+        // Event listener for the dark mode toggle button
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        
+        // Make toggle work with keyboard (Enter and Space keys)
+        darkModeToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleDarkMode();
+            }
+        });
+        
+        // Listen for system theme changes and update if user hasn't set manual preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            const savedTheme = localStorage.getItem('theme');
+            // Only auto-update if user hasn't manually set a preference
+            if (!savedTheme) {
+                if (e.matches) {
+                    enableDarkMode();
+                } else {
+                    disableDarkMode();
+                }
+            }
+        });
+        
+        // Initialize dark mode when page loads
+        initializeDarkMode();
+    </script>
 
     <!-- JavaScript for hamburger menu toggle -->
     <script>
@@ -123,6 +225,81 @@ When evaluating a new AI tool in the future, I would ask questions such as: What
                 navMenu.classList.remove('active');
             });
         });
+    </script>
+
+    <!-- JavaScript for Scroll Reveal Animations -->
+    <script>
+        // Intersection Observer for scroll-based reveal animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -100px 0px',
+            threshold: 0.15
+        };
+        
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+        
+        const revealObserver = new IntersectionObserver(handleIntersection, observerOptions);
+        
+        function initScrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initScrollReveal);
+        } else {
+            initScrollReveal();
+        }
+    </script>
+
+    <!-- JavaScript for Scroll Progress Bar -->
+    <script>
+        // SCROLL PROGRESS BAR
+        function updateScrollProgress() {
+            const progressBar = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            progressBar.style.width = scrollPercentage + '%';
+        }
+        
+        function throttle(func, delay) {
+            let timeoutId;
+            let lastRan;
+            return function() {
+                const context = this;
+                const args = arguments;
+                if (!lastRan) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                } else {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(function() {
+                        if ((Date.now() - lastRan) >= delay) {
+                            func.apply(context, args);
+                            lastRan = Date.now();
+                        }
+                    }, delay - (Date.now() - lastRan));
+                }
+            };
+        }
+        
+        window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+        window.addEventListener('load', updateScrollProgress);
+        window.addEventListener('resize', throttle(updateScrollProgress, 100));
+        
+        // Initialize immediately
+        updateScrollProgress();
+        console.log('Scroll progress bar initialized');
     </script>
 </body>
 </html>
