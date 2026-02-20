@@ -61,7 +61,7 @@
         <section class="reveal">
             <h2>Technical Understanding</h2>
 
-            <h3>1. What code did the AI generate? </h3>
+            <h3> What features did I implement with AI assistance?? </h3>
             <p>
                 I thought of four features and asked Claude Sonnet 4.5 to code them for my portfolio. Below are the four features I implemented with Ai assistance: 
             </p>
@@ -72,13 +72,13 @@
                 <li><strong>Progress Bar:</strong> Shows how far the user has scrolled on the page.</li>
             </ul>
 
-            <h3>2. How does it work?</h3>
+            <h3> How does it work?</h3>
             <p>
                 I understand the basic mechanics of the code: I tell the AI what I want, and it writes the code. 
                 I’m confident with simple functions and if/else logic, but some coding language like threshold, root margin, and class list are still tricky for me to understand.
             </p>
 
-            <h3>3. What did you modify?</h3>
+            <h3> What did you modify? Did you need to fix bugs, adjust styling, or change functionality? </h3>
             <p>
                 <strong>Hamburger Toggle:</strong> I first began with the Hamburger Toggle. This worked perfectly; no changes needed after the prompt was given.<br>
                 <strong>Scroll Reveal Animation:</strong> My second feature was my Scroll Reveal feature. Worked as intended and didn't need to add onto the prompt to get my desired outcome. <br>
@@ -91,17 +91,17 @@
         <section class="reveal">
             <h2>Process Evaluation</h2>
 
-            <h3>4. When was AI helpful?</h3>
+            <h3> When was AI helpful?</h3>
             <p>
-                Yes! AI accelerated the implementation of my different features, I don't know what I would've done without it. My portfolio would look very different if I had to write all the code myself.
+             AI accelerated the implementation of my different features, I don't know what I would've done without it. My portfolio would look very different if I had to write all the code myself. Ai provided me with a starting point and from there I was able to tweak the code to fit my needs. 
             </p>
 
-            <h3>5. When was AI problematic?</h3>
+            <h3> When was AI problematic?</h3>
             <p>
-                For harder features (dark mode toggle, progress bar), AI initially game me code that didn't work. I had to tweak prompts and make adjustments to get my desired outcome.
+                For harder features (dark mode toggle, progress bar), AI initially game me code that didn't work or was not fully functional. I had to tweak prompts and make adjustments to get my desired outcome.
             </p>
 
-            <h3>6. What's your role? In an AI-assisted workflow, what remains uniquely human? What can't (or shouldn't) be automated?</h3>
+            <h3> What's your role? In an AI-assisted workflow, what remains uniquely human? What can't (or shouldn't) be automated?</h3>
             <p>
                 My role remains uniquely human: writing prompts, guiding AI, making design decisions, and interpreting how features should behave for users.
                 I believe the human experience and how humans interact with something can never be understood by Ai. 
@@ -112,18 +112,18 @@
         <section class="reveal">
             <h2>Ethical Considerations</h2>
 
-            <h3>7. Learning trade-offs: Does vibe coding help or hinder your development as a programmer?</h3>
+            <h3> Learning trade-offs: Does vibe coding help or hinder your development as a programmer?</h3>
             <p>
                 Vibe coding helps me work efficiently with AI, but if I wanted to focus on "fundamentals first", it might hinder my learning and understanding of code.
             </p>
 
-            <h3>8. Attribution: When using AI-generated code, what does proper citation look like? </h3>
+            <h3> Attribution: When using AI-generated code, what does proper citation look like? </h3>
             <p>
                 Proper citation should look the same in academic and professional contexts, I believe in giving the person credit even when it’s extracted by an Ai tool. 
                 I think you should always note which parts of the code were Ai assisted and include the tool you used. 
             </p>
 
-            <h3>9. Personal guidelines for AI use</h3>
+            <h3>  Personal guidelines for AI use</h3>
             <p>
                 I will use AI for debugging, understanding complex code, and generating ideas. I won’t use it for security-sensitive tasks, bypassing rules, or plagiarism.
             </p>
@@ -184,6 +184,37 @@
         // DARK MODE FUNCTIONALITY
         // ===================================
         
+
+        // BELOW ARE ALL MY COMMENTS (for some reason I tried to put my comments under each section but they turned white and put it onto my portfolio)
+        
+       // Dark Mode Toggle 
+       // I understand how this code works, it just allows user to toggle back and forth between a dark mode and a light mode
+       // This was very easy to implement and I think it adds a nice touch to my portfolio.
+       // I will say that it did only work on one tab, I did have to adjust the code a little bit to make it work on all pages, its definitely working now
+       // Had some issues with it covering my homepage and I wanted to remove the sun and moon symbols it embedded for me
+       // I also had to make the toggle smaller it was too big
+
+
+
+    z   // Get hamburger button and navigation menu Comments 
+        // This code is responsible for toggling the navigation menu on mobile devices
+        // I understand the logic of how the hamburger menu works and how it enhances the user experiences     
+        // The hamburger menu was easy to implement and I didn't have any issues with it.
+
+
+        // Scroll Reveal Animations Comments 
+        // I wanted to add this feature to make my portfolio more dynamic and engaging.
+        // I thought this was going to be hard to prompt but it was actually pretty easy to implement.
+        // I believe this feature looks very cool and seperates it from other portfolios 
+
+        //  A Scroll Progress Bar Comments 
+        // I wanted to add this feature to give users a visual indicator of how far they are down the page 
+        // I prompted the chat to implemet this feature but it did not give me a scroll bar
+        // I was a little frustrated at first but I was able to get it working, I simply asked it to show me the scroll bar
+        // After some convincing it finally gave me the code to implement the scroll bar, I think it looks pretty rad
+        
+
+
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
         
@@ -246,8 +277,9 @@
         
         initializeDarkMode();
     </script>
-
+      
     <!-- JavaScript for Hamburger Menu Toggle -->
+
     <script>
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
