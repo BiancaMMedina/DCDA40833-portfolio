@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Hometown Map | Bianca Medina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Page-specific styles */
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="scrollProgress" class="scroll-progress-bar"></div>
+
+<header>
+    <nav>
+        <button class="hamburger" id="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lab02.html">Lab 2</a></li>
+            <li><a href="lab05.html">Lab 5</a></li>
+            <li><a href="hometown-map.html">Hometown Map</a></li>
+            <li><a href="hometown-map.html" class="active">Lab 6</a></li>
+        </ul>
+
+        <button class="dark-mode-toggle" id="darkModeToggle"></button>
+    </nav>
+
+    <h1>Lab 6 – Interactive Mapping Project</h1>
+</header>
+
+<main>
+
+<!-- Project Overview -->
+<section class="reveal">
+    <h2>Project Overview</h2>
+    <p>
+        This lab focuses on creating an interactive map using Python and web mapping tools. 
+        The goal was to visualize meaningful geographic locations and design a map that 
+        communicates both data and personal context.
+    </p>
+</section>
+
+<!-- Interactive Map Section -->
+<section class="reveal">
+    <h2>Interactive Map</h2>
+    <p>
+        Below is my interactive hometown map. It includes custom styling, markers, 
+        and meaningful locations.
+    </p>
+
+    <div class="map-container">
+        <!-- Replace with your actual exported map file -->
+        <iframe src="keller_hometown_map.html"></iframe>
+    </div>
+</section>
+
+<!-- Technical Implementation -->
+<section class="reveal">
+    <h2>Technical Implementation</h2>
+
+    <h3>Tools Used</h3>
+    <ul>
+        <li>Python</li>
+        <li>Folium</li>
+        <li>Geocoding</li>
+        <li>HTML + CSS integration</li>
+    </ul>
+
+    <h3>How the Map Works</h3>
+    <p>
+        The map was generated using Python and exported as an HTML file. 
+        It uses geographic coordinates to place markers and visualize 
+        specific locations. The interactive features allow users to zoom, 
+        pan, and click markers for more information.
+    </p>
+</section>
+
+<!-- Reflection Section -->
+<section class="reveal">
+    <h2>Reflection</h2>
+
+    <h3>What I Learned</h3>
+    <p>
+        This lab strengthened my understanding of how geographic data 
+        can be transformed into interactive visualizations. I learned how 
+        latitude and longitude coordinates translate into real-world 
+        mapping systems.
+    </p>
+
+    <h3>Challenges</h3>
+    <p>
+        One challenge was properly formatting and importing location data. 
+        Debugging geocoding errors required careful checking of data structure 
+        and syntax.
+    </p>
+
+    <h3>Design Decisions</h3>
+    <p>
+        I focused on keeping the design clean and readable. Color, marker 
+        placement, and zoom level were intentionally chosen to create clarity 
+        while maintaining visual appeal.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Bianca Medina | 
+        <a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">
+            GitHub
+        </a>
+    </p>
+</footer>
+
+<!-- Reuse your same JavaScript from Lab 5 -->
+<script src="js/darkmode.js"></script>
+<script src="js/hamburger.js"></script>
+<script src="js/scrollreveal.js"></script>
+<script src="js/progressbar.js"></script>
+
+</body>
+</html>
