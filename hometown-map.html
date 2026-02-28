@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Hometown Map | Bianca Medina</title>
+    <title>Hometown Map | Bianca Medina</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
-        /* Page-specific styles */
-
-        section {
+        /* ---------- LAB 6 PAGE STYLES ---------- */
+        section {h
             margin-bottom: 2rem;
         }
 
@@ -21,18 +20,120 @@
             margin-top: 1rem;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         pre {
             background-color: #272822;
             color: #f8f8f2;
             padding: 1rem;
             border-radius: 5px;
             overflow-x: auto;
+        }
+
+        /* ---------- SCROLL REVEAL ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------- HAMBURGER ---------- */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1100; /* above nav */
+            position: relative;
+        }
+        .hamburger-line {
+            height: 3px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* ---------- NAVIGATION MENU ---------- */
+        #nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        #nav-menu li a.active {
+            font-weight: bold;
+        }
+
+        /* ---------- DARK MODE TOGGLE ---------- */
+        .dark-mode-toggle {
+            cursor: pointer;
+            width: 40px;
+            height: 20px;
+            border-radius: 12px;
+            background-color: #ccc;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            z-index: 1200;
+        }
+        .dark-mode-toggle .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+        body.dark-mode .dark-mode-toggle .toggle-slider {
+            transform: translateX(20px);
+        }
+
+        /* ---------- SCROLL PROGRESS BAR ---------- */
+        .scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background-color: ##b694f7; /* light purple */
+            width: 0%;
+            z-index: 1300;
+            transition: width 0.1s linear;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            #nav-menu {
+                flex-direction: column;
+                display: none;
+                background-color: #fff;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            #nav-menu.active {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -43,7 +144,7 @@
 
 <header>
     <nav>
-        <button class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -51,89 +152,65 @@
 
         <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="lab02.html">Lab 2</a></li>
+            <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+            <li><a href="tufte-critique.html">Tufte Critique</a></li>
+            <li><a href="tableau-visualization.html">Tableau Viz</a></li>
             <li><a href="lab05.html">Lab 5</a></li>
-            <li><a href="hometown-map.html">Hometown Map</a></li>
-            <li><a href="hometown-map.html" class="active">Lab 6</a></li>
+            <li><a href="hometown-map.html" class="active">Hometown Map</a></li>
         </ul>
 
-        <button class="dark-mode-toggle" id="darkModeToggle"></button>
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <span class="toggle-slider"></span>
+        </button>
     </nav>
 
-    <h1>Lab 6 – Interactive Mapping Project</h1>
+    <h1>Lab 6 Hometown Map</h1>
 </header>
 
 <main>
-
 <!-- Project Overview -->
 <section class="reveal">
-    <h2>Project Overview</h2>
+    <h2>Lab 6 Hometown Map</h2>
     <p>
-        This lab focuses on creating an interactive map using Python and web mapping tools. 
-        The goal was to visualize meaningful geographic locations and design a map that 
-        communicates both data and personal context.
+        This lab focuses on creating a visualization of my hometown Keller, Texas. 
+        Below is a map I coded that reflects all of my favorite restaurants, parks, shopping centers and more. 
     </p>
 </section>
 
-<!-- Interactive Map Section -->
+<!-- Map Placeholder -->
 <section class="reveal">
-    <h2>Interactive Map</h2>
+    <h2>Map Placeholder</h2>
     <p>
-        Below is my interactive hometown map. It includes custom styling, markers, 
-        and meaningful locations.
+        This section is reserved for the interactive map. You can add your Python/Folium export here later.
     </p>
-
     <div class="map-container">
-        <!-- Replace with your actual exported map file -->
-        <iframe src="keller_hometown_map.html"></iframe>
+        <p style="text-align:center; padding: 2rem; background-color: #eee; border-radius: 10px;">
+            Map will go here.
+        </p>
     </div>
 </section>
 
-<!-- Technical Implementation -->
+<!-- Design Inspiration -->
 <section class="reveal">
-    <h2>Technical Implementation</h2>
-
-    <h3>Tools Used</h3>
-    <ul>
-        <li>Python</li>
-        <li>Folium</li>
-        <li>Geocoding</li>
-        <li>HTML + CSS integration</li>
-    </ul>
-
-    <h3>How the Map Works</h3>
+    <h2>Design Inspiration</h2>
     <p>
-        The map was generated using Python and exported as an HTML file. 
-        It uses geographic coordinates to place markers and visualize 
-        specific locations. The interactive features allow users to zoom, 
-        pan, and click markers for more information.
+        The basemap design was inspired by one of my favorite films, Pride and Prejudice, directed by Joe Wright. While browsing Pinterest, I found an image that included the color palette shown below. I selected the fourth color, “Muted Ochre,” as the base for the map and built the rest of the design around it. The muted ochre gave the map a realistic rustic look, which is what I was going for. The slate blue grey was used for bodies of water, while grey and cream tones were applied to major roads and place labels.
     </p>
 </section>
 
-<!-- Reflection Section -->
+<!-- Cartographic Challenges -->
 <section class="reveal">
-    <h2>Reflection</h2>
-
-    <h3>What I Learned</h3>
+    <h2>Cartographic Challenges</h2>
     <p>
-        This lab strengthened my understanding of how geographic data 
-        can be transformed into interactive visualizations. I learned how 
-        latitude and longitude coordinates translate into real-world 
-        mapping systems.
+        I wanted the map to be legible; I chose colors and labels that work across multiple scales. Colors that look fine for a city might be overwhelming for a country map; this was quite a challenge for me. I also tried to make sure that the labels didn’t overlap each other, which could make it difficult for the user to engage with. Overall, there weren’t many challenges involving the map making process, it was actually quite fun.
     </p>
+</section>
 
-    <h3>Challenges</h3>
+<!-- Technical Challenges -->
+<section class="reveal">
+    <h2>Technical Challenges</h2>
     <p>
-        One challenge was properly formatting and importing location data. 
-        Debugging geocoding errors required careful checking of data structure 
-        and syntax.
-    </p>
-
-    <h3>Design Decisions</h3>
-    <p>
-        I focused on keeping the design clean and readable. Color, marker 
-        placement, and zoom level were intentionally chosen to create clarity 
-        while maintaining visual appeal.
+        I encountered several coding challenges throughout this lab, starting with the initial creation of the code. At first, I asked for help from ChatGPT, but despite trying multiple prompts, it wasn’t producing the results I needed. I then remembered that I had experience with an AI tool called Claude from my AI Special Topics class. Claude was better able to understand my code and guide me through the issues I was facing. Not only did it help generate the code, but it also assisted with problems related to my CSV file being in the wrong location. There were many instances when my code wouldn’t run in the terminal, and Claude not only helped me correct these errors but also explained what the code was doing, improving my understanding along the way. 
     </p>
 </section>
 
@@ -141,17 +218,58 @@
 
 <footer>
     <p>© 2026 Bianca Medina | 
-        <a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">
-            GitHub
-        </a>
+        <a href="https://github.com/BiancaMMedina/DCDA40833-portfolio.git">GitHub</a>
     </p>
 </footer>
 
-<!-- Reuse your same JavaScript from Lab 5 -->
-<script src="js/darkmode.js"></script>
-<script src="js/hamburger.js"></script>
-<script src="js/scrollreveal.js"></script>
-<script src="js/progressbar.js"></script>
+<!-- DARK MODE -->
+<script>
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
 
-</body>
-</html>
+function initializeDarkMode() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') enableDarkMode();
+    else if (savedTheme === 'light') disableDarkMode();
+    else window.matchMedia('(prefers-color-scheme: dark)').matches ? enableDarkMode() : disableDarkMode();
+}
+function enableDarkMode() { body.classList.add('dark-mode'); darkModeToggle.setAttribute('aria-pressed','true'); localStorage.setItem('theme','dark'); }
+function disableDarkMode() { body.classList.remove('dark-mode'); darkModeToggle.setAttribute('aria-pressed','false'); localStorage.setItem('theme','light'); }
+darkModeToggle.addEventListener('click', () => body.classList.contains('dark-mode') ? disableDarkMode() : enableDarkMode());
+darkModeToggle.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') { e.preventDefault(); body.classList.contains('dark-mode') ? disableDarkMode() : enableDarkMode(); } });
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { if(!localStorage.getItem('theme')) e.matches ? enableDarkMode() : disableDarkMode(); });
+initializeDarkMode();
+</script>
+
+<!-- HAMBURGER MENU -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('active'); });
+navMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('active'); navMenu.classList.remove('active'); }); });
+</script>
+
+<!-- SCROLL REVEAL -->
+<script>
+const observerOptions = { root:null, rootMargin:'0px 0px -100px 0px', threshold:0.15 };
+function handleIntersection(entries, observer) { entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('active'); observer.unobserve(entry.target); } }); }
+const revealObserver = new IntersectionObserver(handleIntersection, observerOptions);
+function initScrollReveal() { document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el)); }
+document.readyState==='loading'?document.addEventListener('DOMContentLoaded',initScrollReveal):initScrollReveal();
+</script>
+
+<!-- SCROLL PROGRESS BAR -->
+<script>
+function updateScrollProgress(){
+    const progressBar = document.getElementById('scrollProgress');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = scrollHeight>0?(scrollTop/scrollHeight)*100:0;
+    progressBar.style.width = scrollPercentage+'%';
+}
+function throttle(func,delay){ let timeoutId,lastRan; return function(){ const context=this,args=arguments; if(!lastRan){ func.apply(context,args); lastRan=Date.now(); } else { clearTimeout(timeoutId); timeoutId=setTimeout(()=>{ if((Date.now()-lastRan)>=delay){ func.apply(context,args); lastRan=Date.now(); } }, delay-(Date.now()-lastRan)); } }; }
+window.addEventListener('scroll', throttle(updateScrollProgress,10));
+window.addEventListener('load', updateScrollProgress);
+window.addEventListener('resize', throttle(updateScrollProgress,100));
+</script>

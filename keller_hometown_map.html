@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f7d0dbdbce96cfc21960a780005c1ee3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f7d0dbdbce96cfc21960a780005c1ee3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f7d0dbdbce96cfc21960a780005c1ee3 = L.map(
+                "map_f7d0dbdbce96cfc21960a780005c1ee3",
+                {
+                    center: [32.9343, -97.2286],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_87eef883393edf18dbe3f72266cf9c81 = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/biancammedina/cmm3qqdup000l01sc5ifna8f3/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYmlhbmNhbW1lZGluYSIsImEiOiJjbWx0cW50bDgwMzJpM2NwdndzMm1oMG1xIn0.fcPeCaWLgsYe7Rh2Xyb1pA",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u00a9 \u003ca href=\"https://www.mapbox.com/about/maps/\"\u003eMapbox\u003c/a\u003e",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_87eef883393edf18dbe3f72266cf9c81.addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var marker_cd994186733fe5fd67fee760a3903e47 = L.marker(
+                [32.932894, -97.217265],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_ed689b133e4dead982dfd03f928ad3db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bec5520805a3b08bb8271b67efdbdbe9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8cacf5d186ba744506f18a3098e28567 = $(`<div id="html_8cacf5d186ba744506f18a3098e28567" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZjdkCqSO7jU9gSF3ujUB5pQExMICtkkHUKQ&s" alt="Avila Taco" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Avila Taco</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Restaurant</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Amazing tacos with bold flavors — a Keller staple for Tex-Mex lovers.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://www.avilatacotx.com" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_bec5520805a3b08bb8271b67efdbdbe9.setContent(html_8cacf5d186ba744506f18a3098e28567);
+            
+        
+
+        marker_cd994186733fe5fd67fee760a3903e47.bindPopup(popup_bec5520805a3b08bb8271b67efdbdbe9)
+        ;
+
+        
+    
+    
+            marker_cd994186733fe5fd67fee760a3903e47.bindTooltip(
+                `<div>
+                     Avila Taco (Restaurant)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cd994186733fe5fd67fee760a3903e47.setIcon(icon_ed689b133e4dead982dfd03f928ad3db);
+            
+    
+            var marker_a8671f095c193ed037b688dbdb0c9c93 = L.marker(
+                [32.922883, -97.188143],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_17f19a281d0f708085b272fe6e051dbe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63b598784bafd5eb2ad313e565ab9120 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9051ca53448ecc37717b7ce8baab15e1 = $(`<div id="html_9051ca53448ecc37717b7ce8baab15e1" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/fd/c3/45/exterior.jpg?w=1400&h=800&s=1" alt="Acquario Italian Restaurant" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Acquario Italian Restaurant</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Restaurant</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Elegant Italian dining with fresh pasta and a warm, cozy atmosphere.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://www.acquariorestaurant.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_63b598784bafd5eb2ad313e565ab9120.setContent(html_9051ca53448ecc37717b7ce8baab15e1);
+            
+        
+
+        marker_a8671f095c193ed037b688dbdb0c9c93.bindPopup(popup_63b598784bafd5eb2ad313e565ab9120)
+        ;
+
+        
+    
+    
+            marker_a8671f095c193ed037b688dbdb0c9c93.bindTooltip(
+                `<div>
+                     Acquario Italian Restaurant (Restaurant)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a8671f095c193ed037b688dbdb0c9c93.setIcon(icon_17f19a281d0f708085b272fe6e051dbe);
+            
+    
+            var marker_f510747a5e75513b95ac1befd0ca18d7 = L.marker(
+                [32.93202, -97.226894],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_c3082b85c55b382ee61434e715b7cbfb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12e1f8b8e3d117e2494da6015978a7b3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e77c5a0b1de5955551716f2f7bb710a1 = $(`<div id="html_e77c5a0b1de5955551716f2f7bb710a1" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/543461484_122135457578900740_7556340244768893628_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=ZFtRztyHzbEQ7kNvwFfJdEs&_nc_oc=AdnXI8Gb24LTBzdorqCjfyngglNC6r_zPRgirGkBEgG5upjZ_6knwDf1G2_jaqB24fY&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=OF-os51q50y_IZKL9vOA1Q&oh=00_AfsRnWPByL5O3nZ3ppNA2rrKVoOa1WnBfdf42Fd6Uap13g&oe=69A63C9B" alt="SoHo Wine Bar + Kitchen" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">SoHo Wine Bar + Kitchen</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Restaurant</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Sophisticated wine bar with great small plates, perfect for date night.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://sohowinebarrestaurant.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_12e1f8b8e3d117e2494da6015978a7b3.setContent(html_e77c5a0b1de5955551716f2f7bb710a1);
+            
+        
+
+        marker_f510747a5e75513b95ac1befd0ca18d7.bindPopup(popup_12e1f8b8e3d117e2494da6015978a7b3)
+        ;
+
+        
+    
+    
+            marker_f510747a5e75513b95ac1befd0ca18d7.bindTooltip(
+                `<div>
+                     SoHo Wine Bar + Kitchen (Restaurant)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f510747a5e75513b95ac1befd0ca18d7.setIcon(icon_c3082b85c55b382ee61434e715b7cbfb);
+            
+    
+            var marker_7209bda7910c0846dc102d00d7725760 = L.marker(
+                [32.922669, -97.25492],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_4332aa19e21b1fa6d1b4c3802862a712 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0263a0544c71de0f1c9b5054690247da = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5eb360aad47a64114a3849f879a9fbe1 = $(`<div id="html_5eb360aad47a64114a3849f879a9fbe1" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://static.spotapps.co/website_images/ab_websites/84191_website_v1/logo_about_new.png" alt="DeVivo Bros. Eatery" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">DeVivo Bros. Eatery</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Restaurant</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Casual and delicious — a neighborhood gem known for hearty comfort food.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://devivobroseatery.com" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_0263a0544c71de0f1c9b5054690247da.setContent(html_5eb360aad47a64114a3849f879a9fbe1);
+            
+        
+
+        marker_7209bda7910c0846dc102d00d7725760.bindPopup(popup_0263a0544c71de0f1c9b5054690247da)
+        ;
+
+        
+    
+    
+            marker_7209bda7910c0846dc102d00d7725760.bindTooltip(
+                `<div>
+                     DeVivo Bros. Eatery (Restaurant)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7209bda7910c0846dc102d00d7725760.setIcon(icon_4332aa19e21b1fa6d1b4c3802862a712);
+            
+    
+            var marker_931c8c062b260e89c85c0b86c10a5d89 = L.marker(
+                [32.933189, -97.253967],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_1df26763934f8c9759615749d6c35f53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "glass",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5c04630518dbd2215002b0d9d13d5b08 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_70614c7fac12969082f4f1371ad3a01d = $(`<div id="html_70614c7fac12969082f4f1371ad3a01d" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://play-lh.googleusercontent.com/uHI6pmChOQuIwpbCjJYjGQQV_hz-DlsaK_slYeUuGHo6AiG9ybzG8q2EIKXW8VsSorA=w480-h960-rw" alt="Shotzee's Bar & Grill" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Shotzee's Bar & Grill</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Bar/Grill</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Lively local sports bar with cold drinks and crowd-pleasing bar food.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://shotzees.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_5c04630518dbd2215002b0d9d13d5b08.setContent(html_70614c7fac12969082f4f1371ad3a01d);
+            
+        
+
+        marker_931c8c062b260e89c85c0b86c10a5d89.bindPopup(popup_5c04630518dbd2215002b0d9d13d5b08)
+        ;
+
+        
+    
+    
+            marker_931c8c062b260e89c85c0b86c10a5d89.bindTooltip(
+                `<div>
+                     Shotzee's Bar & Grill (Bar/Grill)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_931c8c062b260e89c85c0b86c10a5d89.setIcon(icon_1df26763934f8c9759615749d6c35f53);
+            
+    
+            var marker_96e4f60c74beeeb10db0ee4f8a577d30 = L.marker(
+                [32.934889, -97.221893],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_71c316c9e306a37960dd84032fa61802 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e42a793f78db24bfa31cbc645a91c6c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_af4800e5d0d93e68f2f97f3f40397c26 = $(`<div id="html_af4800e5d0d93e68f2f97f3f40397c26" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://static.wixstatic.com/media/95b6eb_a19e080f47bc4cd4a4e682822829229c~mv2_d_2550_3300_s_4_2.png/v1/fill/w_1628,h_1308,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/95b6eb_a19e080f47bc4cd4a4e682822829229c~mv2_d_2550_3300_s_4_2.png" alt="Coco Shrimp" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Coco Shrimp</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Restaurant</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Fresh shrimp dishes cooked every way imaginable — a seafood lover's dream.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://www.cocoshrimp.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_9e42a793f78db24bfa31cbc645a91c6c.setContent(html_af4800e5d0d93e68f2f97f3f40397c26);
+            
+        
+
+        marker_96e4f60c74beeeb10db0ee4f8a577d30.bindPopup(popup_9e42a793f78db24bfa31cbc645a91c6c)
+        ;
+
+        
+    
+    
+            marker_96e4f60c74beeeb10db0ee4f8a577d30.bindTooltip(
+                `<div>
+                     Coco Shrimp (Restaurant)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_96e4f60c74beeeb10db0ee4f8a577d30.setIcon(icon_71c316c9e306a37960dd84032fa61802);
+            
+    
+            var marker_af2b9f058d2cf48584ab2f40b95818e3 = L.marker(
+                [32.961948, -97.250428],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_568373a9c1ec7d15ecc4cd78a6cf9bb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4e69983f67f9631dd83a56cac483701 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1c375b90769f12f2891c6a7a91688377 = $(`<div id="html_1c375b90769f12f2891c6a7a91688377" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/539449967_122111324042968889_2834154071390890519_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=OFndCeFk1I8Q7kNvwFkbi0V&_nc_oc=AdkCKRDxmHr16ljMT41nqaqJzbeMBFyt52xrxIclEMzAO5GFmT8JckepyHRO7Rm2Tt8&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=b9DxnWqnObx1PvjpeXBGoQ&oh=00_AfsLBzKm-oqY0Vqdm8Yan_FqdEyUF-cNzssexZJrsb8sHg&oe=69A64FB4" alt="Italian Table" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Italian Table</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Restaurant</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Classic Italian recipes made with love — the pasta here is outstanding.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://www.italiantablerestaurant.com" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_c4e69983f67f9631dd83a56cac483701.setContent(html_1c375b90769f12f2891c6a7a91688377);
+            
+        
+
+        marker_af2b9f058d2cf48584ab2f40b95818e3.bindPopup(popup_c4e69983f67f9631dd83a56cac483701)
+        ;
+
+        
+    
+    
+            marker_af2b9f058d2cf48584ab2f40b95818e3.bindTooltip(
+                `<div>
+                     Italian Table (Restaurant)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_af2b9f058d2cf48584ab2f40b95818e3.setIcon(icon_568373a9c1ec7d15ecc4cd78a6cf9bb5);
+            
+    
+            var marker_0894f7b37b2e69241cd2858df6ee3a71 = L.marker(
+                [32.93574, -97.237477],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_01fa3ab5f803b418f6c1419fada67a3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9b6a57ded64417d8f9e0c3a87ad51d2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7bddf269d7127c84007921133b93a2ef = $(`<div id="html_7bddf269d7127c84007921133b93a2ef" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-1/306226213_580470350507797_4395937127757556195_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=cTvO9z-V4OsQ7kNvwFzC5-E&_nc_oc=AdmLCqfu4OIUMSogEknJwmXsw3B9LKifTf0AiHi2Edw62QHeQ8T64o_wxEuLR2hg0VE&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&_nc_gid=fCvwqE0XAsLxhgNcIR9hJQ&oh=00_AftMF1E17eMFXSro_mQ5jXJxggHcHBSrO2RY9tC92l_sSg&oe=69A6395F" alt="El Sabor Restaurant" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">El Sabor Restaurant</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Restaurant</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Authentic Mexican flavors that remind you of home-cooked meals.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://www.elsaborrestaurant.com" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_a9b6a57ded64417d8f9e0c3a87ad51d2.setContent(html_7bddf269d7127c84007921133b93a2ef);
+            
+        
+
+        marker_0894f7b37b2e69241cd2858df6ee3a71.bindPopup(popup_a9b6a57ded64417d8f9e0c3a87ad51d2)
+        ;
+
+        
+    
+    
+            marker_0894f7b37b2e69241cd2858df6ee3a71.bindTooltip(
+                `<div>
+                     El Sabor Restaurant (Restaurant)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0894f7b37b2e69241cd2858df6ee3a71.setIcon(icon_01fa3ab5f803b418f6c1419fada67a3a);
+            
+    
+            var marker_3ce54619b89366834e7d68e3ce5fdff7 = L.marker(
+                [32.93197, -97.253322],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_991da815dcbf41c318ac28660d719dd8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37a6c0ac343dbbb2642d0fc5cb185d9b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2bda8052aed99f98b257bf0417739440 = $(`<div id="html_2bda8052aed99f98b257bf0417739440" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-96488000000000000/restaurant_list_image_1693417188.jpg" alt="Hush (Sushi)" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Hush (Sushi)</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Restaurant</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Creative sushi rolls in a sleek setting — a must for sushi fans in Keller.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://hushkeller.com" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_37a6c0ac343dbbb2642d0fc5cb185d9b.setContent(html_2bda8052aed99f98b257bf0417739440);
+            
+        
+
+        marker_3ce54619b89366834e7d68e3ce5fdff7.bindPopup(popup_37a6c0ac343dbbb2642d0fc5cb185d9b)
+        ;
+
+        
+    
+    
+            marker_3ce54619b89366834e7d68e3ce5fdff7.bindTooltip(
+                `<div>
+                     Hush (Sushi) (Restaurant)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3ce54619b89366834e7d68e3ce5fdff7.setIcon(icon_991da815dcbf41c318ac28660d719dd8);
+            
+    
+            var marker_b456f5ecc992793ea035d593198afbca = L.marker(
+                [32.933565, -97.254752],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_69b4d7028351ef2172f534e83f7658e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "coffee",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89d2c02cc7b4f959f81a71e587821db6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d266d19e1c57a9f45628fa3954a1973c = $(`<div id="html_d266d19e1c57a9f45628fa3954a1973c" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://communityimpact.com/uploads/images/2025/10/13/389893.jpeg" alt="Grutogi Bistro    Coffee Shop" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Grutogi Bistro    Coffee Shop</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Coffee Shop</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Cozy coffee shop with great brews and a welcoming neighborhood vibe.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://grutogi.com" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_89d2c02cc7b4f959f81a71e587821db6.setContent(html_d266d19e1c57a9f45628fa3954a1973c);
+            
+        
+
+        marker_b456f5ecc992793ea035d593198afbca.bindPopup(popup_89d2c02cc7b4f959f81a71e587821db6)
+        ;
+
+        
+    
+    
+            marker_b456f5ecc992793ea035d593198afbca.bindTooltip(
+                `<div>
+                     Grutogi Bistro    Coffee Shop (Coffee Shop)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b456f5ecc992793ea035d593198afbca.setIcon(icon_69b4d7028351ef2172f534e83f7658e9);
+            
+    
+            var marker_11f8ab7020d7f8ef0f4f2b6929f21b46 = L.marker(
+                [32.93202, -97.226894],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_da4eba1b08cc696b93b69601f6952d74 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "shopping-bag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7cd525631f8fceb0eab51b23910015f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_11e1903b224ced6498c7803ec104f6ee = $(`<div id="html_11e1903b224ced6498c7803ec104f6ee" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJTBcoMHUMM9sIS5UtsolyInWSXxfZ8OyiHA&s" alt="Bella Boutique" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Bella Boutique</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Boutique</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Charming boutique with stylish women's clothing and unique finds.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://bellaboutiquekeller.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_f7cd525631f8fceb0eab51b23910015f.setContent(html_11e1903b224ced6498c7803ec104f6ee);
+            
+        
+
+        marker_11f8ab7020d7f8ef0f4f2b6929f21b46.bindPopup(popup_f7cd525631f8fceb0eab51b23910015f)
+        ;
+
+        
+    
+    
+            marker_11f8ab7020d7f8ef0f4f2b6929f21b46.bindTooltip(
+                `<div>
+                     Bella Boutique (Boutique)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_11f8ab7020d7f8ef0f4f2b6929f21b46.setIcon(icon_da4eba1b08cc696b93b69601f6952d74);
+            
+    
+            var marker_e2f2c0fcbfc2d3a20f9f8a6fdc044345 = L.marker(
+                [32.940368, -97.253156],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_a537608946a396f770d1a0e84edbbdfd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "shopping-bag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0cabe52825c14cc05e9048bc775ed8a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ed4d5207dcda140f04dbbf19612aaaed = $(`<div id="html_ed4d5207dcda140f04dbbf19612aaaed" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLWlDmDLiLFaNKK2CLZYcDTmOcvUq_YkAFQg&s" alt="Market 31 Boutique" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Market 31 Boutique</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Boutique</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Trendy local boutique packed with fashion-forward pieces and accessories.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://market31boutique.com" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_b0cabe52825c14cc05e9048bc775ed8a.setContent(html_ed4d5207dcda140f04dbbf19612aaaed);
+            
+        
+
+        marker_e2f2c0fcbfc2d3a20f9f8a6fdc044345.bindPopup(popup_b0cabe52825c14cc05e9048bc775ed8a)
+        ;
+
+        
+    
+    
+            marker_e2f2c0fcbfc2d3a20f9f8a6fdc044345.bindTooltip(
+                `<div>
+                     Market 31 Boutique (Boutique)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e2f2c0fcbfc2d3a20f9f8a6fdc044345.setIcon(icon_a537608946a396f770d1a0e84edbbdfd);
+            
+    
+            var marker_0e344710390f2918889cc55f44adadc6 = L.marker(
+                [32.93551, -97.238428],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_0c1ee4583d3982a7016c929b2b68ca1c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "certificate",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7d0c51f416955a4b8af5a61d8914f17f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_571d354d4cb446c68dd96d1d9e1dab1d = $(`<div id="html_571d354d4cb446c68dd96d1d9e1dab1d" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://www.shophoolahoops.com/cdn/shop/collections/HoolaHoopsLogo_18Oct18_orangesquare_320x.jpg?v=1657226044" alt="Hoola Hoops" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Hoola Hoops</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Jewelry & Accessories</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Fun and colorful jewelry shop with pieces for every style and occasion.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://www.shophoolahoops.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_7d0c51f416955a4b8af5a61d8914f17f.setContent(html_571d354d4cb446c68dd96d1d9e1dab1d);
+            
+        
+
+        marker_0e344710390f2918889cc55f44adadc6.bindPopup(popup_7d0c51f416955a4b8af5a61d8914f17f)
+        ;
+
+        
+    
+    
+            marker_0e344710390f2918889cc55f44adadc6.bindTooltip(
+                `<div>
+                     Hoola Hoops (Jewelry & Accessories)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0e344710390f2918889cc55f44adadc6.setIcon(icon_0c1ee4583d3982a7016c929b2b68ca1c);
+            
+    
+            var marker_f46ec94b39b82be73ceb340095dbf2e1 = L.marker(
+                [32.9334, -97.218027],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_6d6547364b4199e750055928ddd81fc2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "shopping-bag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df000a8bbbb8979cc906e74d1bd37bfd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_450c260e5bdca59490ae19f6212d9025 = $(`<div id="html_450c260e5bdca59490ae19f6212d9025" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRekpBdGh9ij6etS_ixxteDUoYfyTTirNN17w&s" alt="Social Rose Boutique" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Social Rose Boutique</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Boutique</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Chic boutique with on-trend looks perfect for any Texas lifestyle.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://www.socialrosetexas.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_df000a8bbbb8979cc906e74d1bd37bfd.setContent(html_450c260e5bdca59490ae19f6212d9025);
+            
+        
+
+        marker_f46ec94b39b82be73ceb340095dbf2e1.bindPopup(popup_df000a8bbbb8979cc906e74d1bd37bfd)
+        ;
+
+        
+    
+    
+            marker_f46ec94b39b82be73ceb340095dbf2e1.bindTooltip(
+                `<div>
+                     Social Rose Boutique (Boutique)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f46ec94b39b82be73ceb340095dbf2e1.setIcon(icon_6d6547364b4199e750055928ddd81fc2);
+            
+    
+            var marker_da2d6a63fdfefe3dd4ae4f017754c953 = L.marker(
+                [32.933173, -97.226882],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_8b245823b4ca7ff9c363c8714f244fe8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_beb70c9ae63dd68d84497ce70bcb242e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d83ea2fa3171f0a5837b66e9010ff920 = $(`<div id="html_d83ea2fa3171f0a5837b66e9010ff920" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMKe6UDTelPROsNKll3fiV8juY4w84CPWIEQ&s" alt="Keller Town Center" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Keller Town Center</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Shopping & Dining</span>         <p style="margin:8px 0;font-size:13px;color:#555;">The heart of Keller — great mix of shops, restaurants, and community events.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://www.regencycenters.com/property/detail/675/Keller-Town-Center" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_beb70c9ae63dd68d84497ce70bcb242e.setContent(html_d83ea2fa3171f0a5837b66e9010ff920);
+            
+        
+
+        marker_da2d6a63fdfefe3dd4ae4f017754c953.bindPopup(popup_beb70c9ae63dd68d84497ce70bcb242e)
+        ;
+
+        
+    
+    
+            marker_da2d6a63fdfefe3dd4ae4f017754c953.bindTooltip(
+                `<div>
+                     Keller Town Center (Shopping & Dining)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_da2d6a63fdfefe3dd4ae4f017754c953.setIcon(icon_8b245823b4ca7ff9c363c8714f244fe8);
+            
+    
+            var marker_e6effe7bd87477030b67cfe54a780c85 = L.marker(
+                [32.92669, -97.24309],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_7fb2c4710b12da28a11f8cc69ed485b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_47adce7ba3467ad4b43ea45db49ccd78 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7dc1b60fec99a9c62b9be554b255c7ff = $(`<div id="html_7dc1b60fec99a9c62b9be554b255c7ff" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://keepitinkeller.com/wp-content/uploads/2017/03/City-Logo-Green.png" alt="Bear Creek Park" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Bear Creek Park</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Park / Nature</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Beautiful park with walking trails, playgrounds, and serene green space.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://www.cityofkeller.com/services/parks-recreation/parks-and-trails/keller-parks-and-open-space/bear-creek-park" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_47adce7ba3467ad4b43ea45db49ccd78.setContent(html_7dc1b60fec99a9c62b9be554b255c7ff);
+            
+        
+
+        marker_e6effe7bd87477030b67cfe54a780c85.bindPopup(popup_47adce7ba3467ad4b43ea45db49ccd78)
+        ;
+
+        
+    
+    
+            marker_e6effe7bd87477030b67cfe54a780c85.bindTooltip(
+                `<div>
+                     Bear Creek Park (Park / Nature)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e6effe7bd87477030b67cfe54a780c85.setIcon(icon_7fb2c4710b12da28a11f8cc69ed485b7);
+            
+    
+            var marker_3779d6b69130e856c84862e3fc38dd74 = L.marker(
+                [32.938085, -97.262873],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_9dc681c1691e43232fbd45d55d9a701d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f5e30aed87d3dbc5cd456c0b5f780a3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e4082aefccbbfe88668c060ccc7192e5 = $(`<div id="html_e4082aefccbbfe88668c060ccc7192e5" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://i.ebayimg.com/images/g/n3QAAOSwOx5hKTBP/s-l1200.jpg" alt="Tornado Terry's Family Amusement Center" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Tornado Terry's Family Amusement Center</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Arcade / Family Fun</span>         <p style="margin:8px 0;font-size:13px;color:#555;">A classic family arcade experience with games for all ages.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://www.tornadoterrys.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_4f5e30aed87d3dbc5cd456c0b5f780a3.setContent(html_e4082aefccbbfe88668c060ccc7192e5);
+            
+        
+
+        marker_3779d6b69130e856c84862e3fc38dd74.bindPopup(popup_4f5e30aed87d3dbc5cd456c0b5f780a3)
+        ;
+
+        
+    
+    
+            marker_3779d6b69130e856c84862e3fc38dd74.bindTooltip(
+                `<div>
+                     Tornado Terry's Family Amusement Center (Arcade / Family Fun)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3779d6b69130e856c84862e3fc38dd74.setIcon(icon_9dc681c1691e43232fbd45d55d9a701d);
+            
+    
+            var marker_717bfce56f7489f396313c442670eca4 = L.marker(
+                [32.931845, -97.231763],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_6b776cfe06984e86f98a6db1137d1c76 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01e44d626c54859660fd9b6db69885cd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3b6a39d9ad0e3bd46678926788f9fe7c = $(`<div id="html_3b6a39d9ad0e3bd46678926788f9fe7c" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://keepitinkeller.com/wp-content/uploads/2017/03/images.png" alt="Moviehouse & Eatery by Cinépolis" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Moviehouse & Eatery by Cinépolis</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Dine‑In Cinema</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Dine-in cinema where you can enjoy a full meal while watching the latest films.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://cinepolisusa.com/locations/moviehouse-and-eatery-keller" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_01e44d626c54859660fd9b6db69885cd.setContent(html_3b6a39d9ad0e3bd46678926788f9fe7c);
+            
+        
+
+        marker_717bfce56f7489f396313c442670eca4.bindPopup(popup_01e44d626c54859660fd9b6db69885cd)
+        ;
+
+        
+    
+    
+            marker_717bfce56f7489f396313c442670eca4.bindTooltip(
+                `<div>
+                     Moviehouse & Eatery by Cinépolis (Dine‑In Cinema)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_717bfce56f7489f396313c442670eca4.setIcon(icon_6b776cfe06984e86f98a6db1137d1c76);
+            
+    
+            var marker_4288f4321bc94ca274f9bc488236d250 = L.marker(
+                [32.909776, -97.25811],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_6d6f5128aecf7f6eddaa911e4d1d05b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "heart",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_49f1c4e9b8b95cd8727824edf3d24b78 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_502cd2f78bfcf3d372a397f285133f10 = $(`<div id="html_502cd2f78bfcf3d372a397f285133f10" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://kidsadventureplayhouse.com/cdn/shop/files/kidsadventure.png?height=628&pad_color=fff&v=1671693262&width=1200" alt="Kids Adventure Playhouse and Parties" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Kids Adventure Playhouse and Parties</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Indoor Playground</span>         <p style="margin:8px 0;font-size:13px;color:#555;">A colorful indoor playground and party venue that kids absolutely love.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://kidsadventureplayhouse.com/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_49f1c4e9b8b95cd8727824edf3d24b78.setContent(html_502cd2f78bfcf3d372a397f285133f10);
+            
+        
+
+        marker_4288f4321bc94ca274f9bc488236d250.bindPopup(popup_49f1c4e9b8b95cd8727824edf3d24b78)
+        ;
+
+        
+    
+    
+            marker_4288f4321bc94ca274f9bc488236d250.bindTooltip(
+                `<div>
+                     Kids Adventure Playhouse and Parties (Indoor Playground)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4288f4321bc94ca274f9bc488236d250.setIcon(icon_6d6f5128aecf7f6eddaa911e4d1d05b9);
+            
+    
+            var marker_5da1666108e4c508fc3b452ba05b0d93 = L.marker(
+                [32.933266, -97.216344],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_23d911a010a75e527fe3ab73b207cc96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76b45f5e6b5355d0e419f92324986029 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4c52ff68797b46500fd5f03ad2d78f1f = $(`<div id="html_4c52ff68797b46500fd5f03ad2d78f1f" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://monsterminigolf.com/wp-content/uploads/2023/09/mmg-logo-w-golf-ball-601x310-1.png" alt="Monster Mini Golf Keller" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Monster Mini Golf Keller</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Mini Golf & Arcade</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Glow-in-the-dark mini golf fun for the whole family — super unique!</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://monsterminigolf.com/locations/us/tx/keller/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_76b45f5e6b5355d0e419f92324986029.setContent(html_4c52ff68797b46500fd5f03ad2d78f1f);
+            
+        
+
+        marker_5da1666108e4c508fc3b452ba05b0d93.bindPopup(popup_76b45f5e6b5355d0e419f92324986029)
+        ;
+
+        
+    
+    
+            marker_5da1666108e4c508fc3b452ba05b0d93.bindTooltip(
+                `<div>
+                     Monster Mini Golf Keller (Mini Golf & Arcade)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5da1666108e4c508fc3b452ba05b0d93.setIcon(icon_23d911a010a75e527fe3ab73b207cc96);
+            
+    
+            var marker_167cb4f621ac6c922cd7536ed457558e = L.marker(
+                [32.902713, -97.196984],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_e3a05c13726a81abee998da54536aa90 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_229a991b0354ac943afca0be9104c8b5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_aa3b042be2687bb2fb44e514306e88a6 = $(`<div id="html_aa3b042be2687bb2fb44e514306e88a6" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://static.wixstatic.com/media/72122d_ea415066b2624c5d97a91fb7b903f490~mv2.png/v1/crop/x_23,y_0,w_2002,h_528/fill/w_424,h_86,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ninja%20Kidz%20(no%20!%20)%20LOGO.png" alt="Ninja Kidz Trampoline Park" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Ninja Kidz Trampoline Park</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Trampoline Park (NRH)</span>         <p style="margin:8px 0;font-size:13px;color:#555;">Epic trampoline park nearby with obstacle courses and wall-to-wall jumping.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://www.ninjakidzparks.com/location-home/ninjakidz-100-richland" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_229a991b0354ac943afca0be9104c8b5.setContent(html_aa3b042be2687bb2fb44e514306e88a6);
+            
+        
+
+        marker_167cb4f621ac6c922cd7536ed457558e.bindPopup(popup_229a991b0354ac943afca0be9104c8b5)
+        ;
+
+        
+    
+    
+            marker_167cb4f621ac6c922cd7536ed457558e.bindTooltip(
+                `<div>
+                     Ninja Kidz Trampoline Park (Trampoline Park (NRH))
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_167cb4f621ac6c922cd7536ed457558e.setIcon(icon_e3a05c13726a81abee998da54536aa90);
+            
+    
+            var marker_c3ed38224d6f91893faad938c18c2f15 = L.marker(
+                [32.910724, -97.265069],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_a21b57797bcc3ade7791e10df515bd72 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21957510059d133c70dd2ae6a4fe867a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_293694fa8bd609249ffab84dded2f7a8 = $(`<div id="html_293694fa8bd609249ffab84dded2f7a8" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://storyblok.pleinaircdn.com/f/201186/87x44/aefdc2a651/altitude-original-logo.svg" alt="Altitude Trampoline Park at KELLER" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Altitude Trampoline Park at KELLER</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Trampoline / Fun</span>         <p style="margin:8px 0;font-size:13px;color:#555;">High-energy trampoline park great for burning off energy with the whole family.</p>         <p style="margin:4px 0;font-size:12px;"><a href="https://www.altitudetrampolinepark.com/locations/texas/fort-worth/5650-kroger-drive/" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_21957510059d133c70dd2ae6a4fe867a.setContent(html_293694fa8bd609249ffab84dded2f7a8);
+            
+        
+
+        marker_c3ed38224d6f91893faad938c18c2f15.bindPopup(popup_21957510059d133c70dd2ae6a4fe867a)
+        ;
+
+        
+    
+    
+            marker_c3ed38224d6f91893faad938c18c2f15.bindTooltip(
+                `<div>
+                     Altitude Trampoline Park at KELLER (Trampoline / Fun)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3ed38224d6f91893faad938c18c2f15.setIcon(icon_a21b57797bcc3ade7791e10df515bd72);
+            
+    
+            var marker_98b08bf95a190ec6425446a78b5adf4a = L.marker(
+                [32.940906, -97.239212],
+                {
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+        
+    
+            var icon_b8c25c406096127a69f4309de72ab1cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "book",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_155ddd01d282ef92d847ae71531d2175 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fba7606418f925d2ad4b1337fbe42cdd = $(`<div id="html_fba7606418f925d2ad4b1337fbe42cdd" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial,sans-serif;max-width:300px;">         <img src="https://www.dewberry.com/images/default-source/old/keller-public-library/slideshow/4.jpg?sfvrsn=71f0bf28_0" alt="Keller Public Library" style="width:100%;max-width:280px;border-radius:6px;margin-bottom:8px;" onerror="this.style.display='none'">         <h3 style="margin:4px 0;color:#2c3e50;">Keller Public Library</h3>         <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:12px;                      font-size:12px;">Community / Events</span>         <p style="margin:8px 0;font-size:13px;color:#555;">A beautiful community library hosting events, programs, and resources for all ages.</p>         <p style="margin:4px 0;font-size:12px;"><a href="http://www.cityofkeller.com/library" target="_blank" style="color:#2980b9;">Visit Website</a></p>     </div>     </div>`)[0];
+                popup_155ddd01d282ef92d847ae71531d2175.setContent(html_fba7606418f925d2ad4b1337fbe42cdd);
+            
+        
+
+        marker_98b08bf95a190ec6425446a78b5adf4a.bindPopup(popup_155ddd01d282ef92d847ae71531d2175)
+        ;
+
+        
+    
+    
+            marker_98b08bf95a190ec6425446a78b5adf4a.bindTooltip(
+                `<div>
+                     Keller Public Library (Community / Events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_98b08bf95a190ec6425446a78b5adf4a.setIcon(icon_b8c25c406096127a69f4309de72ab1cb);
+            
+    
+            var layer_control_3abfcdf9a3f4dc65c4f17a63fe2ba781_layers = {
+                base_layers : {
+                    "Mapbox Custom Style" : tile_layer_87eef883393edf18dbe3f72266cf9c81,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_3abfcdf9a3f4dc65c4f17a63fe2ba781 = L.control.layers(
+                layer_control_3abfcdf9a3f4dc65c4f17a63fe2ba781_layers.base_layers,
+                layer_control_3abfcdf9a3f4dc65c4f17a63fe2ba781_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_f7d0dbdbce96cfc21960a780005c1ee3);
+
+        
+</script>
+</html>
